@@ -2,6 +2,7 @@
  * Tile merupakan petak-petak pada puzzle. 
  */
 
+package views;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -18,7 +19,6 @@ import javax.swing.border.Border;
  */
 public class Tile extends JPanel{
   private static final int defaultSize = 50;
-  private int number;
   /**
    * 
    * @param tileSize ukuran petak.
@@ -30,13 +30,9 @@ public class Tile extends JPanel{
     if (!value.equals("")) {
       Border border = BorderFactory.createLineBorder(Color.GRAY, 3);
       setBorder(border);
-      number = Integer.parseInt(value);
-      JLabel numberLabel = new JLabel(number, JLabel.CENTER);
-      add(numberLabel);
-    }
-    else {
-      number = 0;
-    }
+      JLabel number = new JLabel(value, JLabel.CENTER);
+      add(number);
+    }    
   }
   
   public static int getDefaultSize() {
