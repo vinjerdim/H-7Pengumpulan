@@ -56,6 +56,18 @@ public class Puzzle {
       tiles[i] = p.tiles[i];
     }
   }
+  
+  public byte getSize() {
+    return size;
+  }
+  
+  public byte getValue(int index) {
+    return tiles[index];
+  }
+  
+  public byte getMaxValue() {
+    return maxValue;
+  }
     
   public int getTileIndex(int value) {
     int result = -1;

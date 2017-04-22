@@ -1,40 +1,29 @@
+import java.awt.BorderLayout;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+
+import puzzle.Puzzle;
+import views.PuzzleTile;
 
 public class MainTest {
-
+  /**
+   * Program utama.
+   * @param args Argumen main program
+   */
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    JFrame main = new JFrame();
+    JFrame frame = new JFrame("TopLevelDemo");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setLayout(new BorderLayout());
     
-    JLabel label = new JLabel("EXAMPLE");
-    label.setBounds(130,50, 150, 40);
+    Puzzle p = new Puzzle((byte) (3));
     
-    JButton button = new JButton("NICE");
-    button.setBounds(130,100,100,40);
-    button.addActionListener(new ActionListener() {
-      
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        int x = button.getLocation().x;
-        int y = button.getLocation().y;
-        button.setLocation(x + 10, y);
-      }
-    });
-        
-    main.add(button);
-    main.add(label);
-    main.setSize(400, 500);
-    main.setLayout(null);
-    main.setVisible(true);
+    PuzzleTile puzzleTile = new PuzzleTile(p);
     
+    frame.add(puzzleTile);
+    
+    frame.pack();
+    frame.setVisible(true);
+    frame.setResizable(false);
   }
-
 }
