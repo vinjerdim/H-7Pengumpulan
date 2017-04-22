@@ -17,12 +17,15 @@ import puzzle.Puzzle;
  */
 public class PuzzleTile extends JPanel {
   private Tile[] tiles;
+  private Puzzle puzzle;
+  private int blankLocation;
   
   /**
    * 
    * @param puzzle Puzzle yang akan digambar.
    */
   public PuzzleTile(final Puzzle puzzle) {
+    this.puzzle = puzzle;
     int size = puzzle.getSize();
     int length = Tile.getDefaultSize() * size;
     setPreferredSize(new Dimension(length, length));
@@ -30,10 +33,26 @@ public class PuzzleTile extends JPanel {
     setLayout(layout);
     
     tiles = new Tile[puzzle.getMaxValue()];
-    for (byte i = 0; i < puzzle.getMaxValue(); i++) {
+    placeTiles();
+  }
+  
+  public void removeTiles() {
+    for (byte i = 0; i < tiles.length; i++) {
+      remove(tiles[i]);
+    }
+  }
+  
+  public void placeTiles() {
+    for (byte i = 0; i < tiles.length; i++) {
       String value = (puzzle.getValue(i) != puzzle.getMaxValue()) ? puzzle.getValue(i) + "" : "";
       tiles[i] = new Tile(value);
       add(tiles[i]);
     }
+  }
+  
+  public void moveTo(int direction) {
+    puzzle.moveTo(direction);
+    removeTiles();
+    placeTiles();
   }
 }
