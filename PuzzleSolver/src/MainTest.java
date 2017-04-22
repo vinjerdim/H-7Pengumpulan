@@ -20,7 +20,9 @@ public class MainTest {
     
     PuzzleTile puzzleTile = new PuzzleTile(p);
     
+    System.out.println(p);
     frame.add(puzzleTile);
+    puzzleTile.moveTo(1);;
     
     frame.pack();
     frame.setVisible(true);

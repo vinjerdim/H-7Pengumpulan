@@ -16,12 +16,15 @@ import javax.swing.JPanel;
  */
 public class PuzzleTile extends JPanel implements KeyListener{
   private Tile[] tiles;
+  private Puzzle puzzle;
+  private int blankLocation;
   
   /**
    * 
    * @param puzzle Puzzle yang akan digambar.
    */
   public PuzzleTile(final Puzzle puzzle) {
+    this.puzzle = puzzle;
     int size = puzzle.getSize();
     int length = Tile.getDefaultSize() * size;
     setPreferredSize(new Dimension(length, length));
@@ -29,13 +32,24 @@ public class PuzzleTile extends JPanel implements KeyListener{
     setLayout(layout);
     
     tiles = new Tile[puzzle.getMaxValue()];
-    for (byte i = 0; i < puzzle.getMaxValue(); i++) {
+    placeTiles();
+  }
+  
+  public void removeTiles() {
+    for (byte i = 0; i < tiles.length; i++) {
+      remove(tiles[i]);
+    }
+  }
+  
+  public void placeTiles() {
+    for (byte i = 0; i < tiles.length; i++) {
       String value = (puzzle.getValue(i) != puzzle.getMaxValue()) ? puzzle.getValue(i) + "" : "";
       tiles[i] = new Tile(value);
       add(tiles[i]);
     }
   }
   
+<<<<<<< HEAD
 
   public void keyPressed(KeyEvent e) {
      if(e.getKeyCode() == KeyEvent.VK_ENTER){
@@ -50,3 +64,11 @@ public class PuzzleTile extends JPanel implements KeyListener{
   
   
 }
+=======
+  public void moveTo(int direction) {
+    puzzle.moveTo(direction);
+    removeTiles();
+    placeTiles();
+  }
+}
+>>>>>>> 9a5ccad0a4cf179122e2acd1906eb6986306bd0d
