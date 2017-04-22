@@ -2,20 +2,19 @@
  * PuzzleTile terdiri dari petak-petak yang membentuk sebuah puzzle 
  */
 
-package views;
 
+import java.awt.event.*;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
-import puzzle.Puzzle;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
-public class PuzzleTile extends JPanel {
+public class PuzzleTile extends JPanel implements KeyListener{
   private Tile[] tiles;
   
   /**
@@ -36,4 +35,18 @@ public class PuzzleTile extends JPanel {
       add(tiles[i]);
     }
   }
+  
+
+  public void keyPressed(KeyEvent e) {
+     if(e.getKeyCode() == KeyEvent.VK_ENTER){
+        Tile temp = new Tile("10");
+        temp = tiles[1];
+        tiles[1] = tiles[9];
+        tiles[9] = temp;
+     }
+  }
+  public void keyTyped(KeyEvent e) {}
+  public void keyReleased(KeyEvent e) {}
+  
+  
 }
