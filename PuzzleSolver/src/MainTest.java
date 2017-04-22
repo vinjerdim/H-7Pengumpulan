@@ -17,12 +17,8 @@ public class MainTest {
     frame.setLayout(new BorderLayout());
     
     Puzzle p = new Puzzle((byte) (3));
-    
     PuzzleTile puzzleTile = new PuzzleTile(p);
-    
-    System.out.println(p);
     frame.add(puzzleTile);
-    puzzleTile.moveTo(1);;
     
     frame.pack();
     frame.setVisible(true);

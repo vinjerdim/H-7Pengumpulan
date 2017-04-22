@@ -17,12 +17,13 @@ public class CrazyField extends JTextField implements Runnable {
       try {
         setText(i + "");
         if (i == stopAt) {
-          break;
+          Thread.currentThread().interrupt();
         }
         Thread.sleep(delay);
         i++;
       } catch (InterruptedException ie) {
         setText("Interrupted");
+        break;
       }
     }
   }
