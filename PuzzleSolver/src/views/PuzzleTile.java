@@ -4,10 +4,13 @@
 
 package views;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 import puzzle.Puzzle;
 
@@ -29,8 +32,10 @@ public class PuzzleTile extends JPanel {
     int size = puzzle.getSize();
     puzzleSize = Tile.getDefaultSize() * size;
     setPreferredSize(new Dimension(puzzleSize, puzzleSize));
-    GridLayout layout = new GridLayout(size, size, 1, 1);
-    setLayout(layout);    
+    setLayout(new GridLayout(size, size, 1, 1));
+    
+    Border border = BorderFactory.createLineBorder(Color.GRAY, 1);
+    setBorder(border);
     
     tiles = new Tile[puzzle.getMaxValue()];
     placeTiles();
