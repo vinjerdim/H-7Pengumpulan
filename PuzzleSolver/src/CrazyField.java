@@ -3,6 +3,7 @@ import javax.swing.JTextField;
 public class CrazyField extends JTextField implements Runnable {
   private int delay;
   private int stopAt;
+  private volatile boolean running = true;
   
   public CrazyField(int delay, int stopAt) {
     this.delay = delay;
@@ -13,14 +14,15 @@ public class CrazyField extends JTextField implements Runnable {
   public void run() {
     // TODO Auto-generated method stub
     int i = 0;
-    while (true) {
+    while (running) {
       try {
         setText(i + "");
         if (i == stopAt) {
-          Thread.currentThread().interrupt();
+          stop();
+        } else {
+          Thread.sleep(delay);
+          i++;
         }
-        Thread.sleep(delay);
-        i++;
       } catch (InterruptedException ie) {
         setText("Interrupted");
         break;
@@ -28,4 +30,7 @@ public class CrazyField extends JTextField implements Runnable {
     }
   }
 
+  public void stop() {
+    running = false;
+  }
 }

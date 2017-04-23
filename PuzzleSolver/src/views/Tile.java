@@ -17,11 +17,12 @@ import javax.swing.border.Border;
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
-public class Tile extends JPanel{
+public class Tile extends JPanel {
   private static final int defaultSize = 50;
+  
   /**
    * 
-   * @param tileSize ukuran petak.
+   * @param value text yang akan ditampilkan pada petak.
    */
   public Tile(String value) {
     setPreferredSize(new Dimension(defaultSize, defaultSize));

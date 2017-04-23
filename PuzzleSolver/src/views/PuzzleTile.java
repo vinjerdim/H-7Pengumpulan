@@ -18,30 +18,40 @@ import puzzle.Puzzle;
 public class PuzzleTile extends JPanel {
   private Tile[] tiles;
   private Puzzle puzzle;
-  private int blankLocation;
+  private int puzzleSize;
   
   /**
    * 
    * @param puzzle Puzzle yang akan digambar.
    */
   public PuzzleTile(final Puzzle puzzle) {
-    this.puzzle = puzzle;
+    this.puzzle = new Puzzle(puzzle);
     int size = puzzle.getSize();
-    int length = Tile.getDefaultSize() * size;
-    setPreferredSize(new Dimension(length, length));
+    puzzleSize = Tile.getDefaultSize() * size;
+    setPreferredSize(new Dimension(puzzleSize, puzzleSize));
     GridLayout layout = new GridLayout(size, size, 1, 1);
-    setLayout(layout);
+    setLayout(layout);    
     
     tiles = new Tile[puzzle.getMaxValue()];
     placeTiles();
   }
   
+  public int getPuzzleTileSize() {
+    return puzzleSize;
+  }
+  
+  /**
+   * Menghapus semua tile.
+   */
   public void removeTiles() {
     for (byte i = 0; i < tiles.length; i++) {
       remove(tiles[i]);
     }
   }
   
+  /**
+   * Menggambar tile sesuai konfigurasi dari kelas Puzzle.
+   */
   public void placeTiles() {
     for (byte i = 0; i < tiles.length; i++) {
       String value = (puzzle.getValue(i) != puzzle.getMaxValue()) ? puzzle.getValue(i) + "" : "";
@@ -50,9 +60,21 @@ public class PuzzleTile extends JPanel {
     }
   }
   
+  public boolean isMovableTo(int direction) {
+    return puzzle.isMovableTo(direction);
+  }
+  
+  /**
+   * 
+   * @param direction Arah pergerakan petak kosong (1: atas, 2: bawah, 3: kiri, 4: kanan).
+   */
   public void moveTo(int direction) {
     puzzle.moveTo(direction);
     removeTiles();
     placeTiles();
+  }
+  
+  public boolean isFinished() {
+    return puzzle.isFinished();
   }
 }

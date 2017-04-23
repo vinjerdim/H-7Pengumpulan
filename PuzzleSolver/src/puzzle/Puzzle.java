@@ -5,7 +5,6 @@
 package puzzle;
 
 import java.util.Random;
-import java.util.Vector;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).
@@ -34,7 +33,7 @@ public class Puzzle {
       byte candidate;
       do {
         candidate = (byte) rand.nextInt(maxValue);
-      } while(tiles[candidate] != 0);
+      } while (tiles[candidate] != 0);
       tiles[candidate] = (byte) i;
       if (i == maxValue) {
         blankLocation = candidate;
@@ -68,7 +67,12 @@ public class Puzzle {
   public byte getMaxValue() {
     return maxValue;
   }
-    
+   
+  /**
+   * 
+   * @param value Nilai yang akan dicari pada array tiles
+   * @return index letak nilai yang dicari, -1 jika tidak ditemukan.
+   */
   public int getTileIndex(int value) {
     int result = -1;
     int i = 0;
@@ -121,6 +125,10 @@ public class Puzzle {
     return cost;
   }
   
+  /**
+   * 
+   * @return Mengembalikan jumlah tile yang melebihi posisi seharusnya.
+   */
   public int getInversions() {
     int result = 0;
     for (int i = 0; i < maxValue; i++) {
@@ -163,8 +171,8 @@ public class Puzzle {
   
   /**
    * 
-   * @param direction
-   * @return
+   * @param direction Arah pergerakan petak kosong (1: atas, 2: bawah, 3: kiri, 4: kanan).
+   * @return true jika petak kosong dapat bergerak ke arah tersebut
    */
   public boolean isMovableTo(int direction) {
     if (direction == 1 || direction == 2) {
@@ -180,7 +188,7 @@ public class Puzzle {
   
   /**
    * 
-   * @param direction
+   * @param direction Arah pergerakan petak kosong (1: atas, 2: bawah, 3: kiri, 4: kanan).
    */
   public byte moveTo(int direction) {
     int destination = -1;
