@@ -49,6 +49,14 @@ public class Board extends JPanel implements MouseListener {
     return puzzleSize;
   }
   
+  public Puzzle getPuzzle() {
+	  return puzzle;
+  }
+  
+  public Tile[] getTiles() {
+	  return tiles;
+  }
+ 
   /**
    * Menghapus semua tile.
    */

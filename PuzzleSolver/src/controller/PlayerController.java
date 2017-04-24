@@ -39,7 +39,23 @@ public class PlayerController extends JPanel implements Runnable {
     
     setVisible(true);
   }
-    
+  
+  public Board getBoard() {
+	  return board;
+  }
+  
+  public Timer getShowTimer() {
+	  return showTimer;
+  }
+  
+  public JLabel getMovementLabel() {
+	  return movementLabel;
+  }
+  
+  public boolean getRunningState() {
+	  return runningState;
+  }
+  
   public int getPlayerID() {
     return playerId;
   }

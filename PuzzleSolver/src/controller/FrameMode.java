@@ -23,7 +23,6 @@ public abstract class FrameMode extends JFrame implements MouseListener {
   protected HumanPlayer player1;
   protected Puzzle puzzle;
   protected JButton startButton;
-  protected JButton jDependButton;
   protected Thread player1Thread;
   protected Timer monitorTimer;
   
@@ -46,6 +45,26 @@ public abstract class FrameMode extends JFrame implements MouseListener {
     startButton = new JButton("START");
     startButton.addMouseListener(this);
     add(startButton, BorderLayout.PAGE_END);
+  }
+  
+  public Puzzle getPuzzle() {
+	  return puzzle;
+  }
+  
+  public HumanPlayer getPlayer1() {
+	  return player1;
+  }
+  
+  public Thread getPlayer1Thread() {
+	  return player1Thread;
+  }
+  
+  public JButton getStartButton() {
+	  return startButton;
+  }
+  
+  public Timer getMonitorTimer() {
+	  return monitorTimer;
   }
   
   public void showFrame() {

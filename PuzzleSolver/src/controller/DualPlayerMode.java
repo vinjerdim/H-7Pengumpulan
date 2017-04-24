@@ -24,6 +24,18 @@ public class DualPlayerMode extends FrameMode {
     add(player1, BorderLayout.LINE_START);
   }
   
+  public PlayerController getPlayer2() {
+	  return player2;
+  }
+  
+  public Thread getPlayer2Thread() {
+	  return player2Thread;
+  }
+  
+  public Timer getMonitorTimer() {
+	  return monitorTimer;
+  }
+  
   public void initializePlayer2() {
     player2Thread = new Thread(player2, "Player" + player2.getPlayerID());
     add(player2, BorderLayout.LINE_END);
@@ -38,6 +50,7 @@ public class DualPlayerMode extends FrameMode {
     TimerTask gameMonitor = new GameMonitor();
     monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100); 
   }
+  
   
   private class GameMonitor extends TimerTask {
     @Override

@@ -25,13 +25,8 @@ public class ComputerPlayer extends PlayerController {
 	  return movementIndex;
   }
   
-  
-  
   public ComputerPlayer(Puzzle p) {
     super(p);
-    PuzzleSolver ps = new PuzzleSolver(p);
-    solution = ps.getSolution().getMovementSet();
-    movementLabel.setText(solution.length + " movements left");
   }
   
   @Override

@@ -14,7 +14,5 @@ public class ComputerPlayerTest {
 		byte size = (byte) 5;
 		Puzzle P = new Puzzle(size);
 		ComputerPlayer CP = new ComputerPlayer(P);
-		assertTrue(CP.getMovementIndex() == 0);
-		assertEquals(CP.getSolution(), (new PuzzleSolver(P)).getSolution().getMovementSet());		
 	}
 }

@@ -27,6 +27,13 @@ public class VsPlayerMode extends DualPlayerMode {
     showFrame();
   }
   
+  public int getTurn() {
+	  return turn;
+  }
+  public Timer getSwitchingTimer() {
+	  return switchingTimer;
+  }
+  
   @Override
   public void startGame() {
     super.startGame();
