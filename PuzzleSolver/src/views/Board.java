@@ -127,12 +127,24 @@ public class Board extends JPanel implements MouseListener {
   
   public void setTilesEnabled(boolean enabled) {
     for (int i = 0; i < tiles.length; i++) {
-      tiles[i].setEnabled(enabled);
-      if (enabled) {
-        tiles[i].addMouseListener(this);
-      } else {
-        tiles[i].removeMouseListener(this);
-      } 
+      tiles[i].setEnabled(enabled); 
+    }
+    if (enabled) {
+      addTilesListener(this);
+    } else {
+      removeTilesListener(this);
+    }
+  }
+  
+  public void addTilesListener(MouseListener m) {
+    for (int i = 0; i < tiles.length; i++) {
+      tiles[i].addMouseListener(m);
+    }
+  }
+  
+  public void removeTilesListener(MouseListener m) {
+    for (int i = 0; i < tiles.length; i++) {
+      tiles[i].removeMouseListener(m);
     }
   }
   

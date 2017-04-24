@@ -1,6 +1,6 @@
-import controller.SinglePlayerMode;
-import controller.VsComputerMode;
-import controller.VsPlayerMode;
+import framecontroller.SinglePlayerMode;
+import framecontroller.VsComputerMode;
+import framecontroller.VsPlayerMode;
 
 public class MainTest {
   /**
@@ -9,6 +9,6 @@ public class MainTest {
    */
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    VsComputerMode mainFrame = new VsComputerMode();
+    VsPlayerMode mainFrame = new VsPlayerMode();
   }
 }
