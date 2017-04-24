@@ -7,8 +7,8 @@ package controller;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import puzzle.Puzzle;
-import puzzle.PuzzleSolver;
+import model.Puzzle;
+import model.PuzzleSolver;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).
@@ -28,8 +28,8 @@ public class ComputerPlayer extends PlayerController {
   @Override
   public void run() {
     TimerTask applyMovement = new ApplyMovement();
-    timer = new Timer(true);
-    timer.scheduleAtFixedRate(applyMovement, 0, 1000);
+    showTimer = new Timer("Timer" + playerId, true);
+    showTimer.scheduleAtFixedRate(applyMovement, 0, 1000);
     super.run();
   }
   
@@ -37,7 +37,7 @@ public class ComputerPlayer extends PlayerController {
     @Override
     public void run() {
       // TODO Auto-generated method stub
-      puzzleTile.moveTo(solution[movementIndex], false);
+      board.moveTo(solution[movementIndex], false);
       movementIndex++;
       movementLabel.setText(solution.length - movementIndex + " movements left");
     }

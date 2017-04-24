@@ -25,7 +25,7 @@ public class DualPlayerMode extends FrameMode {
   }
   
   public void initializePlayer2() {
-    player2Thread = new Thread(player2);
+    player2Thread = new Thread(player2, "Player" + player2.getPlayerID());
     add(player2, BorderLayout.LINE_END);
     player2.enablePlayer(false);
   }
@@ -34,7 +34,7 @@ public class DualPlayerMode extends FrameMode {
   public void startGame() {
     player1Thread.start();
     player2Thread.start();
-    monitorTimer = new Timer(true);
+    monitorTimer = new Timer("Monitor", true);
     TimerTask gameMonitor = new GameMonitor();
     monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100);
     

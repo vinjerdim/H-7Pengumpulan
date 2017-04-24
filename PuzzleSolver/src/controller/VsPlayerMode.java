@@ -30,7 +30,7 @@ public class VsPlayerMode extends DualPlayerMode {
   @Override
   public void startGame() {
     super.startGame();
-    switchingTimer = new Timer(true);
+    switchingTimer = new Timer("Switcher", true);
     TimerTask switchTurn = new SwitchTurn();
     switchingTimer.scheduleAtFixedRate(switchTurn, 0, 5000);
   }

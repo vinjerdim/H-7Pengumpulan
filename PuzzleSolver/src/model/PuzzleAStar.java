@@ -2,7 +2,7 @@
  * PuzzleSolver bertugas mencari solusi dari suatu puzzle.
  */
 
-package puzzle;
+package model;
 
 import java.util.Vector;
 

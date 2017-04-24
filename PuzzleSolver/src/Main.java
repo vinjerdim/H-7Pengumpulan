@@ -2,11 +2,9 @@
  * Main merupakan program utama.
  */
 
-import puzzle.Puzzle;
-
-import puzzle.PuzzleAStar;
-
-import puzzle.PuzzleSolver;
+import model.Puzzle;
+import model.PuzzleAStar;
+import model.PuzzleSolver;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).

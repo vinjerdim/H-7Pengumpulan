@@ -2,7 +2,7 @@
  * Puzzle menangani pembentukan puzzle dan perubahan state puzzle
  */
 
-package puzzle;
+package model;
 
 import java.util.Random;
 

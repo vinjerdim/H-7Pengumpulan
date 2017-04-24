@@ -2,7 +2,7 @@
  * PuzzleNode merupakan node yang akan diproses pada pencarian jalur
  */
 
-package puzzle;
+package model;
 
 import java.util.Vector;
 

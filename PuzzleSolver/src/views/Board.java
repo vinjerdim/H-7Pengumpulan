@@ -14,13 +14,13 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import puzzle.Puzzle;
+import model.Puzzle;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
-public class PuzzleTile extends JPanel implements MouseListener {
+public class Board extends JPanel implements MouseListener {
   private Tile[] tiles;
   private Puzzle puzzle;
   private int puzzleSize;
@@ -30,12 +30,12 @@ public class PuzzleTile extends JPanel implements MouseListener {
    * 
    * @param puzzle Puzzle yang akan digambar.
    */
-  public PuzzleTile(final Puzzle puzzle) {
+  public Board(final Puzzle puzzle) {
     this.puzzle = new Puzzle(puzzle);
     int size = puzzle.getSize();
     puzzleSize = Tile.getDefaultSize() * size;
     setPreferredSize(new Dimension(puzzleSize, puzzleSize));
-    setLayout(new GridLayout(size, size, 1, 1));
+    setLayout(new GridLayout(size, size));
     
     Border border = BorderFactory.createLineBorder(Color.GRAY, 1);
     setBorder(border);

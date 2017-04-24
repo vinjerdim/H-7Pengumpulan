@@ -12,8 +12,8 @@ import java.util.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import puzzle.Puzzle;
-import puzzle.PuzzleSolver;
+import model.Puzzle;
+import model.PuzzleSolver;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).
@@ -37,7 +37,7 @@ public abstract class FrameMode extends JFrame implements MouseListener {
         
     player1 = new HumanPlayer(puzzle);
     player1.enablePlayer(false);
-    player1Thread = new Thread(player1);
+    player1Thread = new Thread(player1, "Player" + + player1.getPlayerID());
     
     PuzzleSolver ps = new PuzzleSolver(puzzle);
     System.out.println(ps.getSolution());

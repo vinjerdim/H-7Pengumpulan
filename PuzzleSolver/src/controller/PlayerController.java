@@ -11,8 +11,8 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import puzzle.Puzzle;
-import views.PuzzleTile;
+import model.Puzzle;
+import views.Board;
 import views.Tile;
 
 /**
@@ -21,21 +21,21 @@ import views.Tile;
  */
 public class PlayerController extends JPanel implements Runnable {
   public static int playerCount = 0;
-  protected PuzzleTile puzzleTile;
-  protected Timer timer;
+  protected Board board;
+  protected Timer showTimer;
   protected JLabel movementLabel;
-  private int playerId;
+  protected int playerId;
   
   
   public PlayerController(Puzzle p) {
     playerCount++;
     playerId = playerCount;
-    puzzleTile = new PuzzleTile(p);
+    board = new Board(p);
     movementLabel = new JLabel();
     
     setLayout(new BorderLayout());
     add(movementLabel, BorderLayout.PAGE_START);
-    add(puzzleTile, BorderLayout.CENTER);
+    add(board, BorderLayout.CENTER);
     
     setVisible(true);
   }
@@ -45,15 +45,15 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   public void enablePlayer(boolean enabled) {
-    puzzleTile.setTilesEnabled(enabled);
+    board.setTilesEnabled(enabled);
   }
   
   @Override
   public void run() {
     // TODO Auto-generated method stub
-    while (!puzzleTile.isFinished()) {
+    while (!board.isFinished()) {
       
     }
-    timer.cancel();
+    showTimer.cancel();
   }
 }
