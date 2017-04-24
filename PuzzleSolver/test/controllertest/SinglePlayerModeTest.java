@@ -16,13 +16,13 @@ import controller.SinglePlayerMode;
  */
 public class SinglePlayerModeTest {
 
-	@Test
-	public void test() {
-		SinglePlayerMode DP = new SinglePlayerMode();
-		assertTrue(!DP.getPuzzle().isFinished() && DP.getPuzzle().isSolvable());
-		assertNotNull(DP.getPlayer1());
-		assertNotNull(DP.getPlayer1Thread());
-		assertNotNull(DP.getStartButton());
-	}
+  @Test
+  public void test() {
+    SinglePlayerMode DP = new SinglePlayerMode();
+    assertTrue(!DP.getPuzzle().isFinished() && DP.getPuzzle().isSolvable());
+    assertNotNull(DP.getPlayer1());
+    assertNotNull(DP.getPlayer1Thread());
+    assertNotNull(DP.getStartButton());
+  }
 
 }

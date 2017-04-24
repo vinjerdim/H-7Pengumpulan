@@ -50,11 +50,11 @@ public class Board extends JPanel implements MouseListener {
   }
   
   public Puzzle getPuzzle() {
-	  return puzzle;
+    return puzzle;
   }
   
   public Tile[] getTiles() {
-	  return tiles;
+    return tiles;
   }
  
   /**

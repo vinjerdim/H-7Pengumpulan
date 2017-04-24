@@ -28,10 +28,10 @@ public class VsPlayerMode extends DualPlayerMode {
   }
   
   public int getTurn() {
-	  return turn;
+    return turn;
   }
   public Timer getSwitchingTimer() {
-	  return switchingTimer;
+    return switchingTimer;
   }
   
   @Override

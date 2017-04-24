@@ -67,11 +67,11 @@ public class PuzzleNode {
   }
   
   public Puzzle getPrevious() {
-	  return previous;
+    return previous;
   }
   
   public byte [] getMovement() {
-	  return movement;
+    return movement;
   }
   
   public Puzzle getCurrentPuzzle() {
@@ -89,7 +89,7 @@ public class PuzzleNode {
   public int getHeuristicCost() {
     return heuristicCost;
   }
-  	
+    
   public int getDepthCost() {
     return depthCost;
   }

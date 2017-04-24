@@ -19,10 +19,10 @@ public class ComputerPlayer extends PlayerController {
   private byte movementIndex = 0;
   
   public byte[] getSolution() {
-	  return solution;
+    return solution;
   }
   public byte getMovementIndex() {
-	  return movementIndex;
+    return movementIndex;
   }
   
   public ComputerPlayer(Puzzle p) {

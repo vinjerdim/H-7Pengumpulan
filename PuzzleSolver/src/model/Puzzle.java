@@ -70,7 +70,7 @@ public class Puzzle {
   }
    
   public byte getBlankLocation() {
-	  return blankLocation;
+    return blankLocation;
   }
 
   /**

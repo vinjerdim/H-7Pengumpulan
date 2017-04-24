@@ -19,10 +19,10 @@ public class PuzzleSolver {
   }
   
   public PuzzleNode getCurrent() {
-	  return current;
+    return current;
   }
   public PuzzleNode getDeclarationSolution() {
-	  return solution;
+    return solution;
   }
 
   public PuzzleNode getSolution() {

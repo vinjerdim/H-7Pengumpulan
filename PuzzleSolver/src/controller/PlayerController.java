@@ -41,19 +41,19 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   public Board getBoard() {
-	  return board;
+    return board;
   }
   
   public Timer getShowTimer() {
-	  return showTimer;
+    return showTimer;
   }
   
   public JLabel getMovementLabel() {
-	  return movementLabel;
+    return movementLabel;
   }
   
   public boolean getRunningState() {
-	  return runningState;
+    return runningState;
   }
   
   public int getPlayerID() {

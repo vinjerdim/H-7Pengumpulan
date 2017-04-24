@@ -25,15 +25,15 @@ public class DualPlayerMode extends FrameMode {
   }
   
   public PlayerController getPlayer2() {
-	  return player2;
+    return player2;
   }
   
   public Thread getPlayer2Thread() {
-	  return player2Thread;
+    return player2Thread;
   }
   
   public Timer getMonitorTimer() {
-	  return monitorTimer;
+    return monitorTimer;
   }
   
   public void initializePlayer2() {

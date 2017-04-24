@@ -48,23 +48,23 @@ public abstract class FrameMode extends JFrame implements MouseListener {
   }
   
   public Puzzle getPuzzle() {
-	  return puzzle;
+    return puzzle;
   }
   
   public HumanPlayer getPlayer1() {
-	  return player1;
+    return player1;
   }
   
   public Thread getPlayer1Thread() {
-	  return player1Thread;
+    return player1Thread;
   }
   
   public JButton getStartButton() {
-	  return startButton;
+    return startButton;
   }
   
   public Timer getMonitorTimer() {
-	  return monitorTimer;
+    return monitorTimer;
   }
   
   public void showFrame() {

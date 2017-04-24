@@ -17,14 +17,14 @@ import controller.DualPlayerMode;
  */
 public class DualPlayerModeTest {
 
-	@Test
-	public void test() {
-		DualPlayerMode DP = new DualPlayerMode();
-		assertTrue(!DP.getPuzzle().isFinished() && DP.getPuzzle().isSolvable());
-		assertNotNull(DP.getPlayer1());
-		assertNotNull(DP.getPlayer1Thread());
-		assertNotNull(DP.getStartButton());
-		assertNull(DP.getPlayer2());
-		assertNull(DP.getPlayer2Thread());
-	}
+  @Test
+  public void test() {
+    DualPlayerMode DP = new DualPlayerMode();
+    assertTrue(!DP.getPuzzle().isFinished() && DP.getPuzzle().isSolvable());
+    assertNotNull(DP.getPlayer1());
+    assertNotNull(DP.getPlayer1Thread());
+    assertNotNull(DP.getStartButton());
+    assertNull(DP.getPlayer2());
+    assertNull(DP.getPlayer2Thread());
+  }
 }

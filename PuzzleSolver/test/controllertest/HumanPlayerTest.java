@@ -18,17 +18,17 @@ import controller.HumanPlayer;
  */
 public class HumanPlayerTest {
 
-	@Test
-	public void test() {
-		byte size = (byte) 5;
-		Puzzle P = new Puzzle(size);
-		HumanPlayer HP = new HumanPlayer(P);
-		assertTrue(HP.playerCount != 0);
-		assertTrue(HP.getPlayerID() == HP.playerCount);
-		assertFalse(HP.getRunningState());
-		assertNotNull(HP.getBoard());
-		assertNotNull(HP.getMovementLabel());
-		assertTrue(HP.getMovementLabel().getText().contains("Movement"));
-	}
+  @Test
+  public void test() {
+    byte size = (byte) 5;
+    Puzzle P = new Puzzle(size);
+    HumanPlayer HP = new HumanPlayer(P);
+    assertTrue(HP.playerCount != 0);
+    assertTrue(HP.getPlayerID() == HP.playerCount);
+    assertFalse(HP.getRunningState());
+    assertNotNull(HP.getBoard());
+    assertNotNull(HP.getMovementLabel());
+    assertTrue(HP.getMovementLabel().getText().contains("Movement"));
+  }
 
 }

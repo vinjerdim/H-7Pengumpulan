@@ -16,13 +16,13 @@ import model.PuzzleNode;
  */
 public class PuzzleSolverTest {
 
-	@Test
-	public void test() {
-		byte size = (byte) 5;
-		Puzzle P = new Puzzle(size);
-		PuzzleNode PN = new PuzzleNode(P);
-		PuzzleSolver PS = new PuzzleSolver(P);
-		assertNull(PS.getDeclarationSolution());
-		assertNotNull(PS.getCurrent());
-	}
+  @Test
+  public void test() {
+    byte size = (byte) 5;
+    Puzzle P = new Puzzle(size);
+    PuzzleNode PN = new PuzzleNode(P);
+    PuzzleSolver PS = new PuzzleSolver(P);
+    assertNull(PS.getDeclarationSolution());
+    assertNotNull(PS.getCurrent());
+  }
 }
