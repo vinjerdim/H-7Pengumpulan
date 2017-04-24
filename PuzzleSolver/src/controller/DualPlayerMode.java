@@ -36,8 +36,7 @@ public class DualPlayerMode extends FrameMode {
     player2Thread.start();
     monitorTimer = new Timer("Monitor", true);
     TimerTask gameMonitor = new GameMonitor();
-    monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100);
-    
+    monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100); 
   }
   
   private class GameMonitor extends TimerTask {
@@ -46,10 +45,10 @@ public class DualPlayerMode extends FrameMode {
       // TODO Auto-generated method stub
       if (!player1Thread.isAlive() || !player2Thread.isAlive()) {
         if (!player1Thread.isAlive()) {
-          player2Thread.interrupt();
+          player2.setRunningState(false);
           player2.enablePlayer(false);
         } else {
-          player1Thread.interrupt();
+          player1.setRunningState(false);
           player1.enablePlayer(false);
         }
         monitorTimer.cancel();

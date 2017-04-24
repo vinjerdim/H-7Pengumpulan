@@ -28,6 +28,7 @@ public class Puzzle {
     for (int i = 0; i < tiles.length; i++) {
       tiles[i] = 0;
     }
+    
     Random rand = new Random();
     for (int i = 1; i <= maxValue; i++) {
       byte candidate;

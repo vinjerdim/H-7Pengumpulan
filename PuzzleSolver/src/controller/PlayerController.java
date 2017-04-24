@@ -25,7 +25,7 @@ public class PlayerController extends JPanel implements Runnable {
   protected Timer showTimer;
   protected JLabel movementLabel;
   protected int playerId;
-  
+  private volatile boolean runningState = false;
   
   public PlayerController(Puzzle p) {
     playerCount++;
@@ -44,6 +44,10 @@ public class PlayerController extends JPanel implements Runnable {
     return playerId;
   }
   
+  public void setRunningState(boolean state) {
+    runningState = state;
+  }
+  
   public void enablePlayer(boolean enabled) {
     board.setTilesEnabled(enabled);
   }
@@ -51,7 +55,8 @@ public class PlayerController extends JPanel implements Runnable {
   @Override
   public void run() {
     // TODO Auto-generated method stub
-    while (!board.isFinished()) {
+    setRunningState(true);
+    while (!board.isFinished() && runningState) {
       
     }
     showTimer.cancel();

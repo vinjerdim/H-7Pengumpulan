@@ -3,7 +3,6 @@
  */
 
 import model.Puzzle;
-import model.PuzzleAStar;
 import model.PuzzleSolver;
 
 /**
@@ -25,13 +24,6 @@ public class Main {
     System.out.println("Please wait ...");
     long start;
     long end;
-    
-    PuzzleAStar solver1 = new PuzzleAStar(p1);
-    start = System.currentTimeMillis();
-    System.out.println(solver1.getSolution());
-    end = System.currentTimeMillis();
-    System.out.println((end - start) / 1000 + " seconds elapsed");
-    System.out.println("");
     
     PuzzleSolver solver2 = new PuzzleSolver(p1);
     start = System.currentTimeMillis();
