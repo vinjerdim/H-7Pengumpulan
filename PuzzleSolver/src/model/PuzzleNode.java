@@ -11,7 +11,8 @@ import java.util.Vector;
  *
  */
 /**
- * @author Marvin Jerremy
+ * @author
+ *  Marvin Jerremy
  *
  */
 /**
@@ -65,7 +66,14 @@ public class PuzzleNode {
     }
   }
   
-
+  public Puzzle getPrevious() {
+	  return previous;
+  }
+  
+  public byte [] getMovement() {
+	  return movement;
+  }
+  
   public Puzzle getCurrentPuzzle() {
     return current;
   }
@@ -81,7 +89,7 @@ public class PuzzleNode {
   public int getHeuristicCost() {
     return heuristicCost;
   }
-  
+  	
   public int getDepthCost() {
     return depthCost;
   }

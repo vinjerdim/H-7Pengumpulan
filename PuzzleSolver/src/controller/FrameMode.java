@@ -23,6 +23,7 @@ public abstract class FrameMode extends JFrame implements MouseListener {
   protected HumanPlayer player1;
   protected Puzzle puzzle;
   protected JButton startButton;
+  protected JButton jDependButton;
   protected Thread player1Thread;
   protected Timer monitorTimer;
   

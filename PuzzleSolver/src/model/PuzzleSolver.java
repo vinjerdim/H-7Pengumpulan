@@ -18,6 +18,13 @@ public class PuzzleSolver {
     current = new PuzzleNode(c);
   }
   
+  public PuzzleNode getCurrent() {
+	  return current;
+  }
+  public PuzzleNode getDeclarationSolution() {
+	  return solution;
+  }
+
   public PuzzleNode getSolution() {
     int bound = current.getHeuristicCost();
     PuzzleNode result = null;

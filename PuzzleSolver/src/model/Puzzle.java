@@ -69,6 +69,10 @@ public class Puzzle {
     return maxValue;
   }
    
+  public byte getBlankLocation() {
+	  return blankLocation;
+  }
+
   /**
    * 
    * @param value Nilai yang akan dicari pada array tiles

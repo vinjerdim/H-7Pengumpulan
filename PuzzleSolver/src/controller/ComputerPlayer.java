@@ -18,6 +18,15 @@ public class ComputerPlayer extends PlayerController {
   private byte[] solution;
   private byte movementIndex = 0;
   
+  public byte[] getSolution() {
+	  return solution;
+  }
+  public byte getMovementIndex() {
+	  return movementIndex;
+  }
+  
+  
+  
   public ComputerPlayer(Puzzle p) {
     super(p);
     PuzzleSolver ps = new PuzzleSolver(p);
