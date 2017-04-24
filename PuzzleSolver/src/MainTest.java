@@ -1,5 +1,4 @@
-import controller.DualModeFrame;
-import controller.SingleModeFrame;
+import controller.VsPlayerMode;
 
 public class MainTest {
   /**
@@ -8,6 +7,6 @@ public class MainTest {
    */
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    DualModeFrame mainFrame = new DualModeFrame();
+    VsPlayerMode mainFrame = new VsPlayerMode();
   }
 }

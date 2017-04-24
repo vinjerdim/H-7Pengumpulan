@@ -57,21 +57,7 @@ public class PuzzleNode {
     }
   }
   
-  /**
-   * I.S. PuzzleNode sudah tercipta
-   * F.S. element movement bertambah satu
-   * @param nextMove langkah yang akan ditambahkan
-   */
-  public void addMovement(int nextMove) {
-    byte[] temp = new byte[movement.length + 1];
-    for (int i = 0; i < movement.length; i++) {
-      temp[i] = movement[i];
-    }
-    temp[temp.length - 1] = (byte) nextMove;
-    movement = temp;
-    depthCost++;
-  }
-  
+
   public Puzzle getCurrentPuzzle() {
     return current;
   }
@@ -91,6 +77,26 @@ public class PuzzleNode {
   public int getDepthCost() {
     return depthCost;
   }
+  
+  public byte[] getMovementSet() {
+    return movement;
+  }
+  
+  /**
+   * I.S. PuzzleNode sudah tercipta
+   * F.S. element movement bertambah satu
+   * @param nextMove langkah yang akan ditambahkan
+   */
+  public void addMovement(int nextMove) {
+    byte[] temp = new byte[movement.length + 1];
+    for (int i = 0; i < movement.length; i++) {
+      temp[i] = movement[i];
+    }
+    temp[temp.length - 1] = (byte) nextMove;
+    movement = temp;
+    depthCost++;
+  }
+  
   
   public Vector<PuzzleNode> getNeighbors() {
     Vector<PuzzleNode> result = new Vector<PuzzleNode>();
