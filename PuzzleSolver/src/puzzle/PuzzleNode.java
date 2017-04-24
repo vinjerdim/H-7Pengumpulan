@@ -10,6 +10,14 @@ import java.util.Vector;
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
+/**
+ * @author Marvin Jerremy
+ *
+ */
+/**
+ * @author Marvin Jerremy
+ *
+ */
 public class PuzzleNode {
   private Puzzle previous;
   private Puzzle current;
@@ -96,7 +104,6 @@ public class PuzzleNode {
     movement = temp;
     depthCost++;
   }
-  
   
   public Vector<PuzzleNode> getNeighbors() {
     Vector<PuzzleNode> result = new Vector<PuzzleNode>();

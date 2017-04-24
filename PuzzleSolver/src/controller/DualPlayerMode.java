@@ -32,11 +32,12 @@ public class DualPlayerMode extends FrameMode {
   
   @Override
   public void startGame() {
+    player1Thread.start();
+    player2Thread.start();
     monitorTimer = new Timer(true);
     TimerTask gameMonitor = new GameMonitor();
     monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100);
-    player1Thread.start();
-    player2Thread.start();
+    
   }
   
   private class GameMonitor extends TimerTask {
