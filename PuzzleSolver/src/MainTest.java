@@ -1,3 +1,5 @@
+import controller.SinglePlayerMode;
+import controller.VsComputerMode;
 import controller.VsPlayerMode;
 
 public class MainTest {

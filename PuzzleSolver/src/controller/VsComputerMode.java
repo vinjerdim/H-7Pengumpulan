@@ -19,18 +19,13 @@ public class VsComputerMode extends DualPlayerMode {
     // TODO Auto-generated constructor stub
     super();
     player2 = new ComputerPlayer(puzzle);
-    add(player2, BorderLayout.LINE_END);
-    player2.enablePlayer(false);
-    
-    pack();
-    setVisible(true);
-    setResizable(false);
+    initializePlayer2();
+    showFrame();
   }
   
   @Override
   public void startGame() {
     player1.enablePlayer(true);
-    player2.enablePlayer(false);
     super.startGame();
   }
 }

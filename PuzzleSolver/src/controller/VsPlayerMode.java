@@ -23,14 +23,8 @@ public class VsPlayerMode extends DualPlayerMode {
     // TODO Auto-generated constructor stub
     super();
     player2 = new HumanPlayer(puzzle);
-    player2Thread = new Thread(player2);
-    
-    add(player2, BorderLayout.LINE_END);
-    player2.enablePlayer(false);
-    
-    pack();
-    setVisible(true);
-    setResizable(false);
+    initializePlayer2();
+    showFrame();
   }
   
   @Override

@@ -7,11 +7,13 @@ package controller;
 import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Timer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import puzzle.Puzzle;
+import puzzle.PuzzleSolver;
 
 /**
  * @author Marvin Jerremy Budiman (13515076).
@@ -22,6 +24,7 @@ public abstract class FrameMode extends JFrame implements MouseListener {
   protected Puzzle puzzle;
   protected JButton startButton;
   protected Thread player1Thread;
+  protected Timer monitorTimer;
   
   public FrameMode(String frameName) {
     super(frameName);
@@ -33,12 +36,24 @@ public abstract class FrameMode extends JFrame implements MouseListener {
     } while (puzzle.isFinished() || !puzzle.isSolvable());
         
     player1 = new HumanPlayer(puzzle);
+    player1.enablePlayer(false);
     player1Thread = new Thread(player1);
+    
+    PuzzleSolver ps = new PuzzleSolver(puzzle);
+    System.out.println(ps.getSolution());
     
     startButton = new JButton("START");
     startButton.addMouseListener(this);
     add(startButton, BorderLayout.PAGE_END);
   }
+  
+  public void showFrame() {
+    pack();
+    setVisible(true);
+    setResizable(false);
+  }
+  
+  public abstract void startGame();
   
   @Override
   public void mouseReleased(MouseEvent arg0) {
@@ -67,6 +82,4 @@ public abstract class FrameMode extends JFrame implements MouseListener {
     startButton.setEnabled(false);
     startButton.removeMouseListener(this);
   }
-  
-  public abstract void startGame();
 }
