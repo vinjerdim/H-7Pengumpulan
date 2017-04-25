@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package modecontroller;
 
 import java.awt.BorderLayout;
@@ -11,6 +7,8 @@ import java.util.TimerTask;
 import playercontroller.PlayerController;
 
 /**
+ * Kelas DualPlayerMode adalah kelas controller untuk mode dual player
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -27,24 +25,42 @@ public class DualPlayerMode extends FrameMode {
     add(player1, BorderLayout.LINE_START);
   }
   
+  /**
+   * Method yang mengembalikan player2
+   * @return PlayerController player2
+   */
   public PlayerController getPlayer2() {
     return player2;
   }
   
+  /**
+   * Method yang mengembalikan player2 thread
+   * @return Player 2 thread
+   */
   public Thread getPlayer2Thread() {
     return player2Thread;
   }
   
+  /**
+   * Method yang mengembalikan timer monitor
+   * @return Timer monitor
+   */
   public Timer getMonitorTimer() {
     return monitorTimer;
   }
   
+  /**
+   * Method untuk menginisialisasi player2
+   */
   public void initializePlayer2() {
     player2Thread = new Thread(player2, "Player" + player2.getPlayerID());
     add(player2, BorderLayout.LINE_END);
     player2.enablePlayer(false);
   }
   
+  /**
+   * Method untuk memulai permainan mode dual player
+   */
   @Override
   public void startGame() {
     monitorTimer = new Timer("Monitor", true);
@@ -54,6 +70,9 @@ public class DualPlayerMode extends FrameMode {
     player2Thread.start();
   }
   
+  /**
+   * Method untuk membuat game selesai
+   */
   @Override
   public void endGame() {
     // TODO Auto-generated method stub
@@ -61,7 +80,16 @@ public class DualPlayerMode extends FrameMode {
     player2.setRunningState(false);
   }
   
+  /**
+   * Kelas GameMonitor yang mempunyai parent TimerTask
+   * 
+   * @author 
+   *
+   */
   private class GameMonitor extends TimerTask {
+	/**
+	 * Method untuk menjalankan GameMonitor
+	 */
     @Override
     public void run() {
       // TODO Auto-generated method stub

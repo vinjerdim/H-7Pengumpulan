@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package view;
 
 import java.awt.BorderLayout;
@@ -17,6 +13,8 @@ import modecontroller.VsComputerMode;
 import modecontroller.VsPlayerMode;
 
 /**
+ * Kelas GameFrame untuk view Game
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -26,6 +24,11 @@ public class GameFrame extends JFrame {
   protected JButton exitButton;
   protected JPanel buttonPanel;
   
+  /**
+   * Konstruktor kelas GameFrame dengan parameter frameTitle
+   * 
+   * @param frameTitle Nama frame
+   */
   public GameFrame(String frameTitle) {
     super(frameTitle);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

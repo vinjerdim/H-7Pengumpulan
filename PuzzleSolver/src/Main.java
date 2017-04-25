@@ -1,10 +1,8 @@
-/**
- * Main merupakan program utama.
- */
-
 import view.MenuFrame;
 
 /**
+ * Kelas Main merupakan program utama.
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */

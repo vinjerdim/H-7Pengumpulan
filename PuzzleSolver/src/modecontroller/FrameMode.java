@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package modecontroller;
 
 import java.awt.BorderLayout;
@@ -16,6 +12,8 @@ import model.Puzzle;
 import playercontroller.HumanPlayer;
 
 /**
+ * Kelas FrameMode adalah Abstrak class untuk frame tampilan
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -27,6 +25,11 @@ public abstract class FrameMode extends JPanel {
   protected Timer monitorTimer;
   protected JLabel statusLabel;
   
+  /**
+   * Konstruktor kelas FrameMode dengan parameter frameName
+   * 
+   * @param frameName Nama dari frame
+   */
   public FrameMode() {
     super();
     //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,23 +48,45 @@ public abstract class FrameMode extends JPanel {
     add(statusLabel, BorderLayout. PAGE_START);
   }
   
+  /**
+   * Method yang mengembalikan nilai puzzle
+   * @return Puzzle
+   */
   public Puzzle getPuzzle() {
     return puzzle;
   }
   
+  /**
+   * Method yang mengembalikan nilai HumanPlayer
+   * @return Human player1
+   */
   public HumanPlayer getPlayer1() {
     return player1;
   }
   
+  /**
+   * Method yang mengembalikan nilai Thread
+   * @return Thread player1
+   */
   public Thread getPlayer1Thread() {
     return player1Thread;
   }
   
+  /**
+   * Method yang mengembalikan nilai monitor timer
+   * @return Monitor Timer
+   */
   public Timer getMonitorTimer() {
     return monitorTimer;
   }
   
+  /**
+   * Abstrak method untuk start game
+   */
   public abstract void startGame();
   
+  /**
+   * Abstrak method untuk end game
+   */
   public abstract void endGame();
 }

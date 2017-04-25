@@ -1,7 +1,3 @@
-/**
- * Tile merupakan petak-petak pada puzzle. 
- */
-
 package view;
 
 import java.awt.BorderLayout;
@@ -14,16 +10,19 @@ import javax.swing.JLabel;
 import javax.swing.border.Border;
 
 /**
+ * Kelas Tile merupakan petak-petak pada puzzle.
+ * 
  * @author Marvin Jerremy Budiman (13515076).
- *
  */
 public class Tile extends JButton {
   private static final int defaultSize = 50;
   private int tileValue;
   
   /**
+   * Konstruktor kelas Tile dengan parameter value dan maxValue
    * 
-   * @param value text yang akan ditampilkan pada petak.
+   * @param value Nilai untuk suatu tile
+   * @param maxValue Nilai maksimal untuk suatu tile
    */
   public Tile(int value, int maxValue) {
     tileValue = value;
@@ -36,10 +35,20 @@ public class Tile extends JButton {
     }
   }
   
+  /**
+   * Method yang mengembalikan nilai defaultSize
+   * 
+   * @return Nilai dari defaultSize
+   */
   public static int getDefaultSize() {
     return defaultSize;
   }
   
+  /**
+   * Method yang mengembalikan nilai tileValue
+   * 
+   * @return Nilai dari tileValue
+   */
   public int getTileValue() {
     return tileValue;
   }

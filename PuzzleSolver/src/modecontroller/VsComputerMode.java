@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package modecontroller;
 
 import java.awt.BorderLayout;
@@ -9,6 +5,8 @@ import java.awt.BorderLayout;
 import playercontroller.ComputerPlayer;
 
 /**
+ * Kelas VsComputerMode adalah kelas controller untuk mode versus computer 
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -24,6 +22,9 @@ public class VsComputerMode extends DualPlayerMode {
     initializePlayer2();
   }
   
+  /**
+   * Method untuk memulai permainan mode versus computer
+   */
   @Override
   public void startGame() {
     player1.enablePlayer(true);

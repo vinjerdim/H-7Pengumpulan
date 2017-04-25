@@ -1,16 +1,20 @@
-/**
- * 
- */
-
 package model;
 
 import java.util.Comparator;
 
 /**
+ * Kelas PuzzleNodeComparator adalah kelas untuk membandingkan puzzle node
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
 public class PuzzleNodeComparator implements Comparator<PuzzleNode> {
+  /**
+   * Method untuk mengcompate dua PuzzleNode
+   * @param PuzzleNode 1 
+   * @param PuzzleNode 2
+   * @return bernilai 1 jika getcost1 > getcost2 , bernilai -1 jika getcost1 < getcost2, bernilai 0 jika selain itu
+   */
   @Override
   public int compare(PuzzleNode pn1, PuzzleNode pn2) {
     if (pn1.getCost() < pn2.getCost()) {

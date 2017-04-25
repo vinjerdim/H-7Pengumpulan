@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package playercontroller;
 
 import java.awt.event.MouseListener;
@@ -11,11 +7,13 @@ import java.util.TimerTask;
 import model.Puzzle;
 
 /**
+ * Kelas HumanPlayer adalah kelas player untuk human
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
 public class HumanPlayer extends PlayerController {
-  /**
+  /** Konstruktor kelas HumanPlayer dengan parameter Puzzle
    * 
    * @param p Puzzle yang akan diselesaikan.
    */
@@ -24,6 +22,9 @@ public class HumanPlayer extends PlayerController {
     movementLabel.setText("Movement(s): " + board.getMovementCount());
   }
  
+  /**
+   * Method untuk menjalankan HumanPlayer
+   */
   @Override
   public void run() {
     TimerTask showMovement = new ShowMovement();
@@ -32,7 +33,16 @@ public class HumanPlayer extends PlayerController {
     super.run();
   }
   
+  /**
+   * Kelas ShowMovement yang memiliki parent TimerTask
+   * 
+   * @author 
+   *
+   */
   private class ShowMovement extends TimerTask {
+	/**
+	 * Method untuk menjalankan ShowMovement
+	 */
     @Override
     public void run() {
       // TODO Auto-generated method stub

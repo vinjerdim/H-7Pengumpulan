@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package view;
 
 import java.awt.event.MouseEvent;
@@ -10,6 +6,8 @@ import java.awt.event.MouseListener;
 import modecontroller.FrameMode;
 
 /**
+ * Kelas ExitGame
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -17,13 +15,19 @@ public class ExitGame implements MouseListener {
   private FrameMode gamePanel;
   private GameFrame gameFrame;
   
+  /**
+   * Konstruktor ExitGame dengan parameter FrameMode dan GameFrame 
+   * 
+   * @param f Framemode
+   * @param g GameFrame
+   */
   public ExitGame(FrameMode f, GameFrame g) {
     gamePanel = f;
     gameFrame = g;
   }
   
-  /* (non-Javadoc)
-   * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
+  /**
+   * Method yang akan dijalankan jika exit di click
    */
   @Override
   public void mouseClicked(MouseEvent e) {

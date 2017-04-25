@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package view;
 
 import java.awt.BorderLayout;
@@ -16,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 /**
+ * Kelas MenuFrame untuk view Menu
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -25,6 +23,9 @@ public class MenuFrame extends JFrame {
   private ButtonGroup options;
   private JButton playButton;
   
+  /**
+   * Konstruktor MenuFrame
+   */
   public MenuFrame() {
     super("Main Menu");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

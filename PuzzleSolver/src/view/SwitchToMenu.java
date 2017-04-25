@@ -1,24 +1,28 @@
-/**
- * 
- */
-
 package view;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
+ * Kelas SwitcToMenu adalah kelas untuk memindahkan view dari game ke menu
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
 public class SwitchToMenu implements MouseListener {
   private GameFrame gameFrame;
   
+  /**
+   * Konstruktor kelas SwitchToMenu dengan satu parameter
+   * 
+   * @param g GameFrame
+   */
   public SwitchToMenu(GameFrame g) {
     gameFrame = g;
   }
-  /* (non-Javadoc)
-   * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
+  
+  /**
+   * Method yang akan dijalankan jika SwitchToMenu di Click
    */
   @Override
   public void mouseClicked(MouseEvent arg0) {

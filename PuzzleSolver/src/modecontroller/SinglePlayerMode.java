@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package modecontroller;
 
 import java.awt.BorderLayout;
@@ -12,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
+ * Kelas SinglePlayerMode adalah kelas controller untuk mode single player
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -24,6 +22,9 @@ public class SinglePlayerMode extends FrameMode {
     add(player1, BorderLayout.CENTER);
   }
   
+  /**
+   * Method untuk memulai permainan mode single player
+   */
   @Override
   public void startGame() {
     player1.enablePlayer(true);
@@ -33,7 +34,16 @@ public class SinglePlayerMode extends FrameMode {
     monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100);
   }
   
+  /**
+   * Kelas GameMonitor adalah kelas yang mempunyai parent TimerTask
+   * 
+   * @author 
+   *
+   */
   private class GameMonitor extends TimerTask {
+	/**
+	 * Method untuk menjalankan GameMonitor
+	 */
     @Override
     public void run() {
       // TODO Auto-generated method stub
@@ -45,6 +55,9 @@ public class SinglePlayerMode extends FrameMode {
     }
   }
 
+  /**
+   * Method yang akan dijalankan jika game selesai
+   */
   @Override
   public void endGame() {
     // TODO Auto-generated method stub

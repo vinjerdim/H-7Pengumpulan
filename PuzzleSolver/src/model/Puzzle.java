@@ -1,14 +1,11 @@
-/**
- * Puzzle menangani pembentukan puzzle dan perubahan state puzzle
- */
-
 package model;
 
 import java.util.Random;
 
 /**
+ * Kelas Puzzle adalah kelas yang menangani pembentukan puzzle dan perubahan state puzzle
+ * 
  * @author Marvin Jerremy Budiman (13515076).
- *
  */
 public class Puzzle {
   protected byte[] tiles;
@@ -57,23 +54,44 @@ public class Puzzle {
     }
   }
   
+  /**
+   * Method untuk mengembalikan nilai size dari puzzle
+   * 
+   * @return Nilai size
+   */
   public byte getSize() {
     return size;
   }
   
+  /**
+   * Method untuk mengembalikan byte dari suatu index
+   * 
+   * @param index Nilai index
+   * @return byte dari index
+   */
   public byte getValue(int index) {
     return tiles[index];
   }
   
+  /**
+   * Method untuk mengembaliakan nilai maxValue
+   * 
+   * @return Nilai maxValue
+   */
   public byte getMaxValue() {
     return maxValue;
   }
-   
+  
+  /**
+   * Method yang mengembalikan byte blank location
+   * @return Byte blank location
+   */
   public byte getBlankLocation() {
     return blankLocation;
   }
 
   /**
+   * Method untuk mengembalikan nilai index dari suatu tile
    * 
    * @param value Nilai yang akan dicari pada array tiles
    * @return index letak nilai yang dicari, -1 jika tidak ditemukan.
@@ -91,6 +109,11 @@ public class Puzzle {
     return result;
   }
   
+  /**
+   * Method untuk mengembalikan suatu string yang berisi informasi tile
+   * 
+   * @return String gabungan dari blankLocation, maxValue, dan size
+   */
   @Override
   public String toString() {
     String result = "";
@@ -131,6 +154,7 @@ public class Puzzle {
   }
   
   /**
+   * Method untuk mengembalikan nilai jumlah tile yang melebihi posisi
    * 
    * @return Mengembalikan jumlah tile yang melebihi posisi seharusnya.
    */
@@ -175,6 +199,7 @@ public class Puzzle {
   }
   
   /**
+   * Method untuk mengecek dapat bergerak direction atau tidak
    * 
    * @param direction Arah pergerakan petak kosong (1: atas, 2: bawah, 3: kiri, 4: kanan).
    * @return true jika petak kosong dapat bergerak ke arah tersebut
@@ -192,8 +217,10 @@ public class Puzzle {
   }
   
   /**
+   * Method yang mengembalikan nilai byte dari arah pergerakan
    * 
    * @param direction Arah pergerakan petak kosong (1: atas, 2: bawah, 3: kiri, 4: kanan).
+   * @return Nilai byte dari arah pergerakan
    */
   public byte moveTo(int direction) {
     int destination = -1;
@@ -214,6 +241,9 @@ public class Puzzle {
     }
   }
   
+  /**
+   * Method untuk mengecek apakah puzzle sama atau tidak
+   */
   @Override
   public boolean equals(Object o) {
     if (o == null || !getClass().equals(o.getClass())) {

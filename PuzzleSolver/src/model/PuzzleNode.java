@@ -1,12 +1,10 @@
-/**
- * PuzzleNode merupakan node yang akan diproses pada pencarian jalur
- */
-
 package model;
 
 import java.util.Vector;
 
 /**
+ * Kelas PuzzleNode merupakan node yang akan diproses pada pencarian jalur
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -18,9 +16,11 @@ public class PuzzleNode {
   private byte[] movement;
   
   /**
+   * Konstruktor kelas PuzzleNode dengan parameter Puzzle
+   * 
    * I.S. sembarang
    * F.S. PuzzleNode tercipta dengan elemen p beserta cost nya, path dialokasi
-   * @param c menjadi elemen dari PuzzleNode
+   * @param p menjadi elemen dari PuzzleNode
    */
   public PuzzleNode(final Puzzle c) {
     previous = null;
@@ -30,6 +30,13 @@ public class PuzzleNode {
     depthCost = movement.length;
   }
   
+  /**
+   * Konstruktor kelas PuzzleNode dengan dua parameter Puzzle dan satu array byte
+   * 
+   * @param p Previous puzzle
+   * @param c Current puzzle
+   * @param m Byte
+   */
   public PuzzleNode(final Puzzle p, final Puzzle c, byte[] m) {
     previous = new Puzzle(p);
     current = new Puzzle(c);
@@ -42,6 +49,8 @@ public class PuzzleNode {
   }
   
   /**
+   * Konstruktor kelas PuzzleNode dengan parameter PuzzleNode
+   * 
    * I.S. sembarang
    * F.S. PuzzleNode tercipta dengan isi yang sama dengan parameter input
    * @param pn PuzzleNode yang ingin disalin
@@ -57,34 +66,60 @@ public class PuzzleNode {
     }
   }
   
+  /**
+   * Method yang mengembalikan previous puzzle
+   * @return Previous puzzle
+   */
   public Puzzle getPrevious() {
     return previous;
   }
   
+  /**
+   * Method yang mengembalikan byte movement
+   * @return Movement
+   */
   public byte [] getMovement() {
     return movement;
   }
   
+  /**
+   * Mengembalikan current puzzle
+   * 
+   * @return Current puzzle
+   */
   public Puzzle getCurrentPuzzle() {
     return current;
   }
   
   /**
-   * I.S.
+   * Mengembalikan nilai dari cost
+   * 
    * @return cost dari node
    */
   public int getCost() {
     return depthCost + heuristicCost;
   }
   
+  /**
+   * Mengembalikan nilai dari heuristic cost
+   * @return nilai heuristic cost
+   */
   public int getHeuristicCost() {
     return heuristicCost;
   }
   
+  /**
+   * Mengembalikan nilai dari depth cost
+   * @return nilai depth cost
+   */
   public int getDepthCost() {
     return depthCost;
   }
   
+  /**
+   * Mengembalikan nilai-nilai movement
+   * @return nilai-nilai movement
+   */
   public byte[] getMovementSet() {
     return movement;
   }
@@ -104,6 +139,10 @@ public class PuzzleNode {
     depthCost++;
   }
   
+  /**
+   * Mengembalikan kumpulan nilai PuzzleNode dari tetangganya
+   * @return nilai-nilai PuzzleNode
+   */
   public Vector<PuzzleNode> getNeighbors() {
     Vector<PuzzleNode> result = new Vector<PuzzleNode>();
     Puzzle temp;
@@ -123,6 +162,10 @@ public class PuzzleNode {
     return result;
   }
   
+  /**
+   * Mengembalikan string dari info PuzzleNode
+   * @return info dari PuzzleNode
+   */
   @Override
   public String toString() {
     String result = "";

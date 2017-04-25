@@ -1,7 +1,3 @@
-/**
- * 
- */
-
 package modecontroller;
 
 import java.util.Timer;
@@ -10,6 +6,8 @@ import java.util.TimerTask;
 import playercontroller.HumanPlayer;
 
 /**
+ * Kelas VsPlayerMode adalah kelas controller untuk mode versus player
+ * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
@@ -27,14 +25,25 @@ public class VsPlayerMode extends DualPlayerMode {
     initializePlayer2();
   }
   
+  /**
+   * Method yang mengembalikan turn
+   * @return Nilai turn
+   */
   public int getTurn() {
     return turn;
   }
   
+  /**
+   * Method yang mengembalikan nilai switching timer
+   * @return Switching timer
+   */
   public Timer getSwitchingTimer() {
     return switchingTimer;
   }
   
+  /**
+   * Method untuk memulai permainan mode versus player
+   */
   @Override
   public void startGame() {
     turn = 1;
@@ -44,7 +53,16 @@ public class VsPlayerMode extends DualPlayerMode {
     switchingTimer.scheduleAtFixedRate(switchTurn, 0, 5000);
   }
   
+  /**
+   * Kelas SwitchTurn adalah kelas yang mempunyai parent TimerTask
+   * 
+   * @author 
+   *
+   */
   private class SwitchTurn extends TimerTask {
+	/**
+	 * Method untuk menjalankan SwitchTurn
+	 */
     @Override
     public void run() {
       // TODO Auto-generated method stub
