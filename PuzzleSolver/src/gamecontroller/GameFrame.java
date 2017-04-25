@@ -1,4 +1,4 @@
-package view;
+package gamecontroller;
 
 import java.awt.BorderLayout;
 

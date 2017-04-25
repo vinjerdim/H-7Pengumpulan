@@ -1,4 +1,4 @@
-import view.MenuFrame;
+import gamecontroller.MenuFrame;
 
 /**
  * Kelas Main merupakan program utama.
