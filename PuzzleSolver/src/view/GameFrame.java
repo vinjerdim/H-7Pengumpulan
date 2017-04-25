@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,17 +14,18 @@ import modecontroller.VsPlayerMode;
 /**
  * Kelas GameFrame untuk view Game
  * 
- * @author Marvin Jerremy Budiman (13515076).
+ * @author Muhamad Irfan Maulana (13515037).
  *
  */
 public class GameFrame extends JFrame {
+  private static final long serialVersionUID = 1L;
   private FrameMode gamePanel;
   protected JButton startButton;
   protected JButton exitButton;
   protected JPanel buttonPanel;
   
   /**
-   * Konstruktor kelas GameFrame dengan parameter frameTitle
+   * Konstruktor kelas GameFrame dengan parameter frameTitle.
    * 
    * @param frameTitle Nama frame
    */

@@ -16,11 +16,10 @@ public class PuzzleNode {
   private byte[] movement;
   
   /**
-   * Konstruktor kelas PuzzleNode dengan parameter Puzzle
-   * 
+   * Konstruktor kelas PuzzleNode dengan parameter Puzzle.
    * I.S. sembarang
    * F.S. PuzzleNode tercipta dengan elemen p beserta cost nya, path dialokasi
-   * @param p menjadi elemen dari PuzzleNode
+   * @param c menjadi elemen dari PuzzleNode
    */
   public PuzzleNode(final Puzzle c) {
     previous = null;
@@ -31,8 +30,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Konstruktor kelas PuzzleNode dengan dua parameter Puzzle dan satu array byte
-   * 
+   * Konstruktor kelas PuzzleNode dengan dua parameter Puzzle dan satu array byte.
    * @param p Previous puzzle
    * @param c Current puzzle
    * @param m Byte
@@ -49,8 +47,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Konstruktor kelas PuzzleNode dengan parameter PuzzleNode
-   * 
+   * Konstruktor kelas PuzzleNode dengan parameter PuzzleNode.
    * I.S. sembarang
    * F.S. PuzzleNode tercipta dengan isi yang sama dengan parameter input
    * @param pn PuzzleNode yang ingin disalin
@@ -67,7 +64,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Method yang mengembalikan previous puzzle
+   * Method yang mengembalikan previous puzzle.
    * @return Previous puzzle
    */
   public Puzzle getPrevious() {
@@ -75,7 +72,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Method yang mengembalikan byte movement
+   * Method yang mengembalikan byte movement.
    * @return Movement
    */
   public byte [] getMovement() {
@@ -83,8 +80,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan current puzzle
-   * 
+   * Mengembalikan current puzzle.
    * @return Current puzzle
    */
   public Puzzle getCurrentPuzzle() {
@@ -92,8 +88,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan nilai dari cost
-   * 
+   * Mengembalikan nilai dari cost.
    * @return cost dari node
    */
   public int getCost() {
@@ -101,7 +96,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan nilai dari heuristic cost
+   * Mengembalikan nilai dari heuristic cost.
    * @return nilai heuristic cost
    */
   public int getHeuristicCost() {
@@ -109,7 +104,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan nilai dari depth cost
+   * Mengembalikan nilai dari depth cost.
    * @return nilai depth cost
    */
   public int getDepthCost() {
@@ -117,7 +112,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan nilai-nilai movement
+   * Mengembalikan nilai-nilai movement.
    * @return nilai-nilai movement
    */
   public byte[] getMovementSet() {
@@ -140,7 +135,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan kumpulan nilai PuzzleNode dari tetangganya
+   * Mengembalikan kumpulan nilai PuzzleNode dari tetangganya.
    * @return nilai-nilai PuzzleNode
    */
   public Vector<PuzzleNode> getNeighbors() {
@@ -163,7 +158,7 @@ public class PuzzleNode {
   }
   
   /**
-   * Mengembalikan string dari info PuzzleNode
+   * Mengembalikan string dari info PuzzleNode.
    * @return info dari PuzzleNode
    */
   @Override

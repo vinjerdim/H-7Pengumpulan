@@ -1,25 +1,23 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.border.Border;
 
 /**
  * Kelas Tile merupakan petak-petak pada puzzle.
  * 
- * @author Marvin Jerremy Budiman (13515076).
+ * @author Patrick Nugroho Hadiwinoto (13515040).
  */
 public class Tile extends JButton {
+  private static final long serialVersionUID = 1L;
   private static final int defaultSize = 50;
   private int tileValue;
   
   /**
-   * Konstruktor kelas Tile dengan parameter value dan maxValue
+   * Konstruktor kelas Tile dengan parameter value dan maxValue.
    * 
    * @param value Nilai untuk suatu tile
    * @param maxValue Nilai maksimal untuk suatu tile
@@ -36,7 +34,7 @@ public class Tile extends JButton {
   }
   
   /**
-   * Method yang mengembalikan nilai defaultSize
+   * Method yang mengembalikan nilai defaultSize.
    * 
    * @return Nilai dari defaultSize
    */
@@ -45,7 +43,7 @@ public class Tile extends JButton {
   }
   
   /**
-   * Method yang mengembalikan nilai tileValue
+   * Method yang mengembalikan nilai tileValue.
    * 
    * @return Nilai dari tileValue
    */

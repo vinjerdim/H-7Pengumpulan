@@ -8,7 +8,7 @@ import javax.swing.JRadioButton;
 /**
  * Kelas SwitchToGame untuk memulai mengganti view ke Game
  * 
- * @author Marvin Jerremy Budiman (13515076).
+ * @author Muhamad Irfan Maulana (13515037).
  *
  */
 public class SwitchToGame implements MouseListener {
@@ -16,7 +16,7 @@ public class SwitchToGame implements MouseListener {
   private JRadioButton[] optionItem;
   
   /**
-   * Konstruktor kelas SwitchToGame dengan dua parameter
+   * Konstruktor kelas SwitchToGame dengan dua parameter.
    * @param m MenuFrame
    * @param rb JRadioButton
    */
@@ -26,7 +26,7 @@ public class SwitchToGame implements MouseListener {
   }
   
   /**
-   * Method yang akan dijalankan jika SwitchToGame di click
+   * Method yang akan dijalankan jika SwitchToGame diklik.
    */
   @Override
   public void mouseClicked(MouseEvent arg0) {
@@ -76,5 +76,4 @@ public class SwitchToGame implements MouseListener {
     // TODO Auto-generated method stub
 
   }
-
 }

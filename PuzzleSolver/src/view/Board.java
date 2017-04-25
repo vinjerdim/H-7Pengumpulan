@@ -16,8 +16,10 @@ import model.Puzzle;
  * Kelas Board adalah kelas yang merepresentasikan papan permainan puzzle
  * dan terdiri dari petak-petak yang membentuk sebuah puzzle
  * 
- * @author Marvin Jerremy Budiman (13515076).
- */public class Board extends JPanel implements MouseListener {
+ * @author Patrick Nugroho Hadiwinoto (13515040).
+ */
+public class Board extends JPanel implements MouseListener {
+  private static final long serialVersionUID = 1L;
   private Tile[] tiles;
   private Puzzle puzzle;
   private int puzzleSize;
@@ -44,7 +46,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengembalikan nilai puzzleSize
+   * Method untuk mengembalikan nilai puzzleSize.
    * 
    * @return Nilai dari puzzleSize
    */
@@ -53,8 +55,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengembalikan Puzzle
-   * 
+   * Method untuk mengembalikan Puzzle.
    * @return Puzzle di dalam board
    */
   public Puzzle getPuzzle() {
@@ -62,8 +63,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengembalikan tiles 
-   * 
+   * Method untuk mengembalikan tiles.
    * @return Tiles
    */
   public Tile[] getTiles() {
@@ -92,8 +92,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengecek tile dapat berpindah atau tidak
-   * 
+   * Method untuk mengecek tile dapat berpindah atau tidak.
    * @param direction Arah pergerakan
    * @return true jika puzzle dapat bergerak ke direction
    */
@@ -115,8 +114,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengecek apakah puzzle sudah selesai atau belum
-   * 
+   * Method untuk mengecek apakah puzzle sudah selesai atau belum.
    * @return true jika puzzle telah selesai
    */
   public boolean isFinished() {
@@ -124,8 +122,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengembalikan nilai index tile
-   * 
+   * Method untuk mengembalikan nilai index tile.
    * @param tile Tile yang akan dicek
    * @return Nilai index dari tile
    */
@@ -143,8 +140,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mengembalikan nilai next move dari tile
-   * 
+   * Method untuk mengembalikan nilai next move dari tile.
    * @param tile Tile yang akan dicek
    * @return nilai next move dari tile
    */
@@ -168,8 +164,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mendapatkan nilai jumlah movement
-   * 
+   * Method untuk mendapatkan nilai jumlah movement.
    * @return Jumlah movement
    */
   public int getMovementCount() {
@@ -177,8 +172,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method untuk mens-set tiles dengan parameter boolean
-   * 
+   * Method untuk mens-set tiles dengan parameter boolean.
    * @param enabled Boolean yang akan diset
    */
   public void setTilesEnabled(boolean enabled) {
@@ -194,7 +188,7 @@ import model.Puzzle;
   }
   
   /**
-   * Method yang akan dijalankan jika tile di click
+   * Method yang akan dijalankan jika tile diklik.
    */
   @Override
   public void mouseClicked(MouseEvent e) {

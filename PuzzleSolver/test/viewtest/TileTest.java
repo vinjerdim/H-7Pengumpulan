@@ -25,7 +25,7 @@ public class TileTest {
     }
     for (int i = 0; i < testTiles.length; i++) {
       assertTrue(testTiles[i].getTileValue() == i);
-      assertTrue(testTiles[i].getDefaultSize() == 50);
+      assertTrue(Tile.getDefaultSize() == 50);
     }
   }
 }

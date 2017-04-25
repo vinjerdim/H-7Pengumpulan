@@ -4,9 +4,6 @@ import java.awt.BorderLayout;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 /**
  * Kelas SinglePlayerMode adalah kelas controller untuk mode single player
  * 
@@ -14,6 +11,8 @@ import javax.swing.JPanel;
  *
  */
 public class SinglePlayerMode extends FrameMode {
+  private static final long serialVersionUID = 1L;
+
   /**
    * Konstruktor kelas SingleModeFrame.
    */
@@ -23,7 +22,7 @@ public class SinglePlayerMode extends FrameMode {
   }
   
   /**
-   * Method untuk memulai permainan mode single player
+   * Method untuk memulai permainan mode single player.
    */
   @Override
   public void startGame() {
@@ -35,15 +34,12 @@ public class SinglePlayerMode extends FrameMode {
   }
   
   /**
-   * Kelas GameMonitor adalah kelas yang mempunyai parent TimerTask
-   * 
-   * @author 
-   *
+   * Kelas GameMonitor adalah kelas yang mempunyai parent TimerTask.
    */
   private class GameMonitor extends TimerTask {
-	/**
-	 * Method untuk menjalankan GameMonitor
-	 */
+    /**
+     * Method untuk menjalankan GameMonitor.
+     */
     @Override
     public void run() {
       // TODO Auto-generated method stub
@@ -56,7 +52,7 @@ public class SinglePlayerMode extends FrameMode {
   }
 
   /**
-   * Method yang akan dijalankan jika game selesai
+   * Method yang akan dijalankan jika game selesai.
    */
   @Override
   public void endGame() {

@@ -14,17 +14,18 @@ import javax.swing.JRadioButton;
 /**
  * Kelas MenuFrame untuk view Menu
  * 
- * @author Marvin Jerremy Budiman (13515076).
+ * @author Muhamad Irfan Maulana (13515037).
  *
  */
 public class MenuFrame extends JFrame {
+  private static final long serialVersionUID = 1L;
   private JPanel optionsPanel;
   private JRadioButton[] optionItem = new JRadioButton[3];
   private ButtonGroup options;
   private JButton playButton;
   
   /**
-   * Konstruktor MenuFrame
+   * Konstruktor MenuFrame.
    */
   public MenuFrame() {
     super("Main Menu");

@@ -1,6 +1,5 @@
 package playercontroller;
 
-import java.awt.event.MouseListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -13,9 +12,11 @@ import model.Puzzle;
  *
  */
 public class HumanPlayer extends PlayerController {
-  /** Konstruktor kelas HumanPlayer dengan parameter Puzzle
-   * 
-   * @param p Puzzle yang akan diselesaikan.
+  private static final long serialVersionUID = 1L;
+
+  /** 
+   * Konstruktor kelas HumanPlayer dengan parameter Puzzle.
+   * @param p Puzzle yang akan diselesaikan
    */
   public HumanPlayer(Puzzle p) {
     super(p);
@@ -23,7 +24,7 @@ public class HumanPlayer extends PlayerController {
   }
  
   /**
-   * Method untuk menjalankan HumanPlayer
+   * Method untuk menjalankan HumanPlayer.
    */
   @Override
   public void run() {
@@ -34,15 +35,12 @@ public class HumanPlayer extends PlayerController {
   }
   
   /**
-   * Kelas ShowMovement yang memiliki parent TimerTask
-   * 
-   * @author 
-   *
+   * Kelas ShowMovement yang memiliki parent TimerTask.
    */
   private class ShowMovement extends TimerTask {
-	/**
-	 * Method untuk menjalankan ShowMovement
-	 */
+    /**
+     * Method untuk menjalankan ShowMovement.
+     */
     @Override
     public void run() {
       // TODO Auto-generated method stub

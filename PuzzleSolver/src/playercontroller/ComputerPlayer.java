@@ -12,12 +12,12 @@ import model.PuzzleSolver;
  * @author Marvin Jerremy Budiman (13515076).
  */
 public class ComputerPlayer extends PlayerController {
+  private static final long serialVersionUID = 1L;
   private byte[] solution;
   private byte movementIndex = 0;
    
   /**
-   * Konstruktor kelas ComputerPlayer dengan parameter Puzzle
-   * 
+   * Konstruktor kelas ComputerPlayer dengan parameter Puzzle.
    * @param p Puzzle computer
    */
   public ComputerPlayer(Puzzle p) {
@@ -28,15 +28,15 @@ public class ComputerPlayer extends PlayerController {
   }
   
   /**
-   * Method yang mengembalikan nilai solution
+   * Method yang mengembalikan nilai solution.
    * @return solution
    */
   public byte[] getSolution() {
-	    return solution;
+    return solution;
   }
   
   /**
-   * Method yang mengembalikan nilai index movement
+   * Method yang mengembalikan nilai index movement.
    * @return Index movement
    */
   public byte getMovementIndex() {
@@ -44,7 +44,7 @@ public class ComputerPlayer extends PlayerController {
   }
   
   /**
-   * Method untuk menjalankan ComputerPlayer
+   * Method untuk menjalankan ComputerPlayer.
    */
   @Override
   public void run() {
@@ -55,16 +55,13 @@ public class ComputerPlayer extends PlayerController {
   }
   
   /**
-   * Kelas ApplyMovement yang mempunyai parent TImerTask
-   * 
-   * @author 
-   *
+   * Kelas ApplyMovement yang mempunyai parent TImerTask.
    */
   private class ApplyMovement extends TimerTask {
-  /**
-	* Method run untuk menjalankan ApplyMovement
-	*/
-	@Override
+    /**
+     * Method run untuk menjalankan ApplyMovement.
+     */
+    @Override
     public void run() {
       // TODO Auto-generated method stub
       board.moveTo(solution[movementIndex], false);

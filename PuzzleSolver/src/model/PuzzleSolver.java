@@ -12,7 +12,7 @@ public class PuzzleSolver {
   private int newBound;
   
   /**
-   * Konstruktor kelas PuzzleSolver dengan satu parameter
+   * Konstruktor kelas PuzzleSolver dengan satu parameter.
    * @param c Puzzle
    */
   public PuzzleSolver(final Puzzle c) {
@@ -20,7 +20,7 @@ public class PuzzleSolver {
   }
   
   /**
-   * Method yang mengembalikan nilai current PuzzleNode
+   * Method yang mengembalikan nilai current PuzzleNode.
    * @return Current PuzzleNode
    */
   public PuzzleNode getCurrent() {
@@ -28,7 +28,7 @@ public class PuzzleSolver {
   }
   
   /**
-   * Method yang mengembalikan nilai PuzzleNode solution
+   * Method yang mengembalikan nilai PuzzleNode solution.
    * @return PuzzleNode solution
    */
   public PuzzleNode getDeclarationSolution() {
@@ -36,7 +36,7 @@ public class PuzzleSolver {
   }
 
   /**
-   * Method yang mengembalikan nilai Puzzlenode result
+   * Method yang mengembalikan nilai PuzzleNode result.
    * @return PuzzleNode result
    */
   public PuzzleNode getSolution() {
@@ -51,7 +51,7 @@ public class PuzzleSolver {
   }
   
   /**
-   * Method search yang mengembalikan nilai PuzzleNode
+   * Method search yang mengembalikan nilai PuzzleNode.
    * @param currentNode PuzzleNode current
    * @param bound Integer bound
    * @return PuzzleNode solution

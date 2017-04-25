@@ -12,6 +12,7 @@ import playercontroller.HumanPlayer;
  *
  */
 public class VsPlayerMode extends DualPlayerMode {
+  private static final long serialVersionUID = 1L;
   private static int turn;
   private Timer switchingTimer;
   
@@ -26,7 +27,7 @@ public class VsPlayerMode extends DualPlayerMode {
   }
   
   /**
-   * Method yang mengembalikan turn
+   * Method yang mengembalikan turn.
    * @return Nilai turn
    */
   public int getTurn() {
@@ -34,7 +35,7 @@ public class VsPlayerMode extends DualPlayerMode {
   }
   
   /**
-   * Method yang mengembalikan nilai switching timer
+   * Method yang mengembalikan nilai switching timer.
    * @return Switching timer
    */
   public Timer getSwitchingTimer() {
@@ -42,7 +43,7 @@ public class VsPlayerMode extends DualPlayerMode {
   }
   
   /**
-   * Method untuk memulai permainan mode versus player
+   * Method untuk memulai permainan mode versus player.
    */
   @Override
   public void startGame() {
@@ -54,15 +55,12 @@ public class VsPlayerMode extends DualPlayerMode {
   }
   
   /**
-   * Kelas SwitchTurn adalah kelas yang mempunyai parent TimerTask
-   * 
-   * @author 
-   *
+   * Kelas SwitchTurn adalah kelas yang mempunyai parent TimerTask.
    */
   private class SwitchTurn extends TimerTask {
-	/**
-	 * Method untuk menjalankan SwitchTurn
-	 */
+    /**
+     * Method untuk menjalankan SwitchTurn.
+     */
     @Override
     public void run() {
       // TODO Auto-generated method stub

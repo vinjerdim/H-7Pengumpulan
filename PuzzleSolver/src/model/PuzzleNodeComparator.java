@@ -10,10 +10,11 @@ import java.util.Comparator;
  */
 public class PuzzleNodeComparator implements Comparator<PuzzleNode> {
   /**
-   * Method untuk mengcompate dua PuzzleNode
-   * @param PuzzleNode 1 
-   * @param PuzzleNode 2
-   * @return bernilai 1 jika getcost1 > getcost2 , bernilai -1 jika getcost1 < getcost2, bernilai 0 jika selain itu
+   * Method untuk membandingkan dua PuzzleNode.
+   * @param pn1 PuzzleNode 1
+   * @param pn2 PuzzleNode 2
+   * @return bernilai 1 jika getcost1 > getcost2 , 
+   *         bernilai -1 jika getcost1 < getcost2, bernilai 0 jika selain itu
    */
   @Override
   public int compare(PuzzleNode pn1, PuzzleNode pn2) {

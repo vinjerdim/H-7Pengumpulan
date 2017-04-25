@@ -1,14 +1,17 @@
 /**
  *
  */
+
 package modeltest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import model.Puzzle;
+import model.PuzzleSolver;
 
 import org.junit.Test;
-import model.PuzzleSolver;
-import model.Puzzle;
-import model.PuzzleNode;
+
 /**
  * @author Martin Lutta Putra (13515121).
  *
@@ -16,13 +19,12 @@ import model.PuzzleNode;
  */
 public class PuzzleSolverTest {
 
-	@Test
-	public void test() {
-		byte size = (byte) 5;
-		Puzzle P = new Puzzle(size);
-		PuzzleNode PN = new PuzzleNode(P);
-		PuzzleSolver PS = new PuzzleSolver(P);
-		assertNull(PS.getDeclarationSolution());
-		assertNotNull(PS.getCurrent());
-	}
+  @Test
+  public void test() {
+    byte size = (byte) 5;
+    Puzzle p = new Puzzle(size);
+    PuzzleSolver ps = new PuzzleSolver(p);
+    assertNull(ps.getDeclarationSolution());
+    assertNotNull(ps.getCurrent());
+  }
 }

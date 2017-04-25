@@ -2,7 +2,7 @@
  *
  */
 
-package controllertest;
+package modecontrollertest;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

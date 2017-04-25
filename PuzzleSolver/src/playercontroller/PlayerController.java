@@ -16,6 +16,7 @@ import view.Board;
  *
  */
 public class PlayerController extends JPanel implements Runnable {
+  private static final long serialVersionUID = 1L;
   public static int playerCount = 0;
   protected Board board;
   protected Timer showTimer;
@@ -24,8 +25,7 @@ public class PlayerController extends JPanel implements Runnable {
   private volatile boolean runningState;
   
   /**
-   * Konstruktor kelas PlayerController dengan parameter Puzzle
-   * 
+   * Konstruktor kelas PlayerController dengan parameter Puzzle.
    * @param p Puzzle yang akan di control oleh player
    */
   public PlayerController(Puzzle p) {
@@ -43,7 +43,7 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   /**
-   * Method yang mengembalikan board
+   * Method yang mengembalikan board.
    * @return Board player
    */
   public Board getBoard() {
@@ -51,7 +51,7 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   /**
-   * Method yang mengembalian timer player
+   * Method yang mengembalian timer player.
    * @return Timer player
    */
   public Timer getShowTimer() {
@@ -59,7 +59,7 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   /**
-   * Method yang mengembalikan nilai movement label
+   * Method yang mengembalikan nilai movement label.
    * @return Movement label
    */
   public JLabel getMovementLabel() {
@@ -67,16 +67,15 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   /**
-   * Method yang menembalikan player id
-   * 
+   * Method yang menembalikan player id.
    * @return Nilai player id
    */
-  public int getPlayerID() {
+  public int getPlayerId() {
     return playerId;
   }
   
   /**
-   * Method yang mengecek state
+   * Method yang mengecek state.
    * @return True jika state sedang running
    */
   public boolean isRunning() {
@@ -84,16 +83,15 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   /**
-   * Method untuk meng-set state;
-   * @param state
+   * Method untuk meng-set state.
+   * @param state Status running dari thread
    */
   public void setRunningState(boolean state) {
     runningState = state;
   }
   
   /**
-   * Method untuk men-set status player
-   * 
+   * Method untuk men-set status player.
    * @param enabled Boolean yang akan diset ke player
    */
   public void enablePlayer(boolean enabled) {
@@ -101,7 +99,7 @@ public class PlayerController extends JPanel implements Runnable {
   }
   
   /**
-   * Method untuk menjalankan PlayerController
+   * Method untuk menjalankan PlayerController.
    */
   @Override
   public void run() {

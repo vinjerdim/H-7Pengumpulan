@@ -8,11 +8,11 @@ import playercontroller.PlayerController;
 
 /**
  * Kelas DualPlayerMode adalah kelas controller untuk mode dual player
- * 
  * @author Marvin Jerremy Budiman (13515076).
  *
  */
 public class DualPlayerMode extends FrameMode {
+  private static final long serialVersionUID = 1L;
   protected PlayerController player2;
   protected Thread player2Thread;
   private Timer monitorTimer;
@@ -26,7 +26,7 @@ public class DualPlayerMode extends FrameMode {
   }
   
   /**
-   * Method yang mengembalikan player2
+   * Method yang mengembalikan player2.
    * @return PlayerController player2
    */
   public PlayerController getPlayer2() {
@@ -34,7 +34,7 @@ public class DualPlayerMode extends FrameMode {
   }
   
   /**
-   * Method yang mengembalikan player2 thread
+   * Method yang mengembalikan player2 thread.
    * @return Player 2 thread
    */
   public Thread getPlayer2Thread() {
@@ -42,7 +42,7 @@ public class DualPlayerMode extends FrameMode {
   }
   
   /**
-   * Method yang mengembalikan timer monitor
+   * Method yang mengembalikan timer monitor.
    * @return Timer monitor
    */
   public Timer getMonitorTimer() {
@@ -50,16 +50,16 @@ public class DualPlayerMode extends FrameMode {
   }
   
   /**
-   * Method untuk menginisialisasi player2
+   * Method untuk menginisialisasi player2.
    */
   public void initializePlayer2() {
-    player2Thread = new Thread(player2, "Player" + player2.getPlayerID());
+    player2Thread = new Thread(player2, "Player" + player2.getPlayerId());
     add(player2, BorderLayout.LINE_END);
     player2.enablePlayer(false);
   }
   
   /**
-   * Method untuk memulai permainan mode dual player
+   * Method untuk memulai permainan mode dual player.
    */
   @Override
   public void startGame() {
@@ -71,7 +71,7 @@ public class DualPlayerMode extends FrameMode {
   }
   
   /**
-   * Method untuk membuat game selesai
+   * Method untuk membuat game selesai.
    */
   @Override
   public void endGame() {
@@ -81,15 +81,12 @@ public class DualPlayerMode extends FrameMode {
   }
   
   /**
-   * Kelas GameMonitor yang mempunyai parent TimerTask
-   * 
-   * @author 
-   *
+   * Kelas GameMonitor yang mempunyai parent TimerTask.
    */
   private class GameMonitor extends TimerTask {
-	/**
-	 * Method untuk menjalankan GameMonitor
-	 */
+    /**
+     * Method untuk menjalankan GameMonitor.
+     */
     @Override
     public void run() {
       // TODO Auto-generated method stub

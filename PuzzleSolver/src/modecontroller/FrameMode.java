@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.util.Timer;
 
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,17 +17,15 @@ import playercontroller.HumanPlayer;
  *
  */
 public abstract class FrameMode extends JPanel {
+  private static final long serialVersionUID = 1L;
   protected HumanPlayer player1;
   protected Puzzle puzzle;
-  protected JButton jDependButton;
   protected Thread player1Thread;
   protected Timer monitorTimer;
   protected JLabel statusLabel;
   
   /**
-   * Konstruktor kelas FrameMode dengan parameter frameName
-   * 
-   * @param frameName Nama dari frame
+   * Konstruktor kelas FrameMode dengan parameter frameName.
    */
   public FrameMode() {
     super();
@@ -41,7 +38,7 @@ public abstract class FrameMode extends JPanel {
     } while (puzzle.isFinished() || !puzzle.isSolvable());
         
     player1 = new HumanPlayer(puzzle);
-    player1Thread = new Thread(player1, "Player" + + player1.getPlayerID());
+    player1Thread = new Thread(player1, "Player" + + player1.getPlayerId());
     player1.enablePlayer(false);
     
     statusLabel = new JLabel("Ready to run");
@@ -49,7 +46,7 @@ public abstract class FrameMode extends JPanel {
   }
   
   /**
-   * Method yang mengembalikan nilai puzzle
+   * Method yang mengembalikan nilai puzzle.
    * @return Puzzle
    */
   public Puzzle getPuzzle() {
@@ -57,7 +54,7 @@ public abstract class FrameMode extends JPanel {
   }
   
   /**
-   * Method yang mengembalikan nilai HumanPlayer
+   * Method yang mengembalikan nilai HumanPlayer.
    * @return Human player1
    */
   public HumanPlayer getPlayer1() {
@@ -65,7 +62,7 @@ public abstract class FrameMode extends JPanel {
   }
   
   /**
-   * Method yang mengembalikan nilai Thread
+   * Method yang mengembalikan nilai Thread.
    * @return Thread player1
    */
   public Thread getPlayer1Thread() {
@@ -73,7 +70,7 @@ public abstract class FrameMode extends JPanel {
   }
   
   /**
-   * Method yang mengembalikan nilai monitor timer
+   * Method yang mengembalikan nilai monitor timer.
    * @return Monitor Timer
    */
   public Timer getMonitorTimer() {
@@ -81,12 +78,12 @@ public abstract class FrameMode extends JPanel {
   }
   
   /**
-   * Abstrak method untuk start game
+   * Abstrak method untuk start game.
    */
   public abstract void startGame();
   
   /**
-   * Abstrak method untuk end game
+   * Abstrak method untuk end game.
    */
   public abstract void endGame();
 }

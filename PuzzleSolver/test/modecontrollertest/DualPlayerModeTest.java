@@ -2,13 +2,11 @@
  *
  */
 
-package controllertest;
+package modecontrollertest;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-
-import java.util.Timer;
 
 import modecontroller.DualPlayerMode;
 
@@ -23,11 +21,11 @@ public class DualPlayerModeTest {
 
   @Test
   public void test() {
-    DualPlayerMode DP = new DualPlayerMode();
-    assertTrue(!DP.getPuzzle().isFinished() && DP.getPuzzle().isSolvable());
-    assertNotNull(DP.getPlayer1());
-    assertNotNull(DP.getPlayer1Thread());
-    assertNull(DP.getPlayer2());
-    assertNull(DP.getPlayer2Thread());
+    DualPlayerMode dp = new DualPlayerMode();
+    assertTrue(!dp.getPuzzle().isFinished() && dp.getPuzzle().isSolvable());
+    assertNotNull(dp.getPlayer1());
+    assertNotNull(dp.getPlayer1Thread());
+    assertNull(dp.getPlayer2());
+    assertNull(dp.getPlayer2Thread());
   }
 }

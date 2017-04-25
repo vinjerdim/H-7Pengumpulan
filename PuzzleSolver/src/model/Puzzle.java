@@ -3,8 +3,7 @@ package model;
 import java.util.Random;
 
 /**
- * Kelas Puzzle adalah kelas yang menangani pembentukan puzzle dan perubahan state puzzle
- * 
+ * Kelas Puzzle adalah kelas yang menangani pembentukan puzzle dan perubahan state puzzle.
  * @author Marvin Jerremy Budiman (13515076).
  */
 public class Puzzle {
@@ -55,8 +54,7 @@ public class Puzzle {
   }
   
   /**
-   * Method untuk mengembalikan nilai size dari puzzle
-   * 
+   * Method untuk mengembalikan nilai size dari puzzle.
    * @return Nilai size
    */
   public byte getSize() {
@@ -64,8 +62,7 @@ public class Puzzle {
   }
   
   /**
-   * Method untuk mengembalikan byte dari suatu index
-   * 
+   * Method untuk mengembalikan byte dari suatu index.
    * @param index Nilai index
    * @return byte dari index
    */
@@ -74,8 +71,7 @@ public class Puzzle {
   }
   
   /**
-   * Method untuk mengembaliakan nilai maxValue
-   * 
+   * Method untuk mengembaliakan nilai maxValue.
    * @return Nilai maxValue
    */
   public byte getMaxValue() {
@@ -83,7 +79,7 @@ public class Puzzle {
   }
   
   /**
-   * Method yang mengembalikan byte blank location
+   * Method yang mengembalikan byte blank location.
    * @return Byte blank location
    */
   public byte getBlankLocation() {
@@ -110,8 +106,7 @@ public class Puzzle {
   }
   
   /**
-   * Method untuk mengembalikan suatu string yang berisi informasi tile
-   * 
+   * Method untuk mengembalikan suatu string yang berisi informasi tile.
    * @return String gabungan dari blankLocation, maxValue, dan size
    */
   @Override
@@ -154,8 +149,7 @@ public class Puzzle {
   }
   
   /**
-   * Method untuk mengembalikan nilai jumlah tile yang melebihi posisi
-   * 
+   * Method untuk mengembalikan nilai jumlah tile yang melebihi posisi.
    * @return Mengembalikan jumlah tile yang melebihi posisi seharusnya.
    */
   public int getInversions() {
@@ -242,7 +236,7 @@ public class Puzzle {
   }
   
   /**
-   * Method untuk mengecek apakah puzzle sama atau tidak
+   * Method untuk mengecek apakah puzzle sama atau tidak.
    */
   @Override
   public boolean equals(Object o) {

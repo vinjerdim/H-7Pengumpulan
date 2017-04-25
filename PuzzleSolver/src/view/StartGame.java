@@ -4,14 +4,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import modecontroller.FrameMode;
 
 /**
  * Kelas StartGame adalah view untuk memulai permainan
  * 
- * @author Marvin Jerremy Budiman (13515076).
+ * @author Patrick Nugroho Hadiwinoto (13515040).
  *
  */
 public class StartGame implements MouseListener {
@@ -19,7 +18,7 @@ public class StartGame implements MouseListener {
   private JButton startButton;
   
   /**
-   * Konstruktor kelas StartGame dengan dua parameter
+   * Konstruktor kelas StartGame dengan dua parameter.
    * @param g FrameMode
    * @param b JButton
    */
@@ -29,7 +28,7 @@ public class StartGame implements MouseListener {
   }
   
   /**
-   * Method yang akan dijalankan jika StartGame di click
+   * Method yang akan dijalankan jika StartGame di click.
    */
   @Override
   public void mouseClicked(MouseEvent e) {

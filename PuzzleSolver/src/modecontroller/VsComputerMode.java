@@ -1,7 +1,5 @@
 package modecontroller;
 
-import java.awt.BorderLayout;
-
 import playercontroller.ComputerPlayer;
 
 /**
@@ -11,6 +9,7 @@ import playercontroller.ComputerPlayer;
  *
  */
 public class VsComputerMode extends DualPlayerMode {
+  private static final long serialVersionUID = 1L;
 
   /**
    * Konstruktor frame player versus computer.
@@ -23,7 +22,7 @@ public class VsComputerMode extends DualPlayerMode {
   }
   
   /**
-   * Method untuk memulai permainan mode versus computer
+   * Method untuk memulai permainan mode versus computer.
    */
   @Override
   public void startGame() {
