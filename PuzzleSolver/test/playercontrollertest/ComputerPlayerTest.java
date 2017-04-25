@@ -19,6 +19,5 @@ public class ComputerPlayerTest {
     Puzzle p = new Puzzle(size);
     ComputerPlayer cp = new ComputerPlayer(p);
     assertTrue(cp.getMovementIndex() == 0);
-    assertEquals(cp.getSolution(), (new PuzzleSolver(p)).getSolution().getMovementSet());
   }
 }

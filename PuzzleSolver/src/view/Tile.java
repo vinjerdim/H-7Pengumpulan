@@ -2,7 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -15,6 +15,7 @@ public class Tile extends JButton {
   private static final long serialVersionUID = 1L;
   private static final int defaultSize = 50;
   private int tileValue;
+  private Font _Font;
   
   /**
    * Konstruktor kelas Tile dengan parameter value dan maxValue.
@@ -26,9 +27,11 @@ public class Tile extends JButton {
     tileValue = value;
     setPreferredSize(new Dimension(defaultSize, defaultSize));
     setLayout(new BorderLayout());
-    
+    this.setFont(_Font);
     if (value != maxValue) {
       JLabel number = new JLabel(value + "", JLabel.CENTER);
+      _Font = new Font("ARIAL", Font.BOLD, defaultSize/2);
+      number.setFont(_Font);
       add(number);
     }
   }
