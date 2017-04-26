@@ -2,13 +2,22 @@ package gamecontroller;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -30,8 +39,7 @@ public class MenuFrame extends JFrame {
    */
   public MenuFrame() {
     super("Main Menu");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLayout(new BorderLayout());
+    setLayout(new GridLayout(1,1));
     setLocation(100, 100);
     
     JLabel title = new JLabel("Slide The Numbers");
@@ -64,8 +72,69 @@ public class MenuFrame extends JFrame {
     mainPanel.add(playButton, BorderLayout.PAGE_END);
     add(mainPanel, BorderLayout.CENTER);
     
+    addWindowListener(new ShowMetrics(this));
+    
     pack();
     setResizable(false);
     setVisible(true);
+  }
+  
+  private class ShowMetrics implements WindowListener {
+    private MenuFrame menuFrame;
+    
+    public ShowMetrics(MenuFrame f) {
+      menuFrame = f;
+    }
+
+    @Override
+    public void windowActivated(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      
+    }
+
+    @Override
+    public void windowClosed(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      
+    }
+
+    @Override
+    public void windowClosing(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      File fileImage = new File("res/metrics.jpg");
+      BufferedImage image;
+      try {
+        image = ImageIO.read(fileImage);
+        JOptionPane.showMessageDialog(menuFrame, new ImageIcon(image));
+        menuFrame.dispose();
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      
+    }
+
+    @Override
+    public void windowIconified(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      
+    }
+
+    @Override
+    public void windowOpened(WindowEvent arg0) {
+      // TODO Auto-generated method stub
+      
+    }
   }
 }

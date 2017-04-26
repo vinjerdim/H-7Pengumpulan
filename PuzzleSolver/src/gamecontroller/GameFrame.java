@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -39,9 +40,9 @@ public class GameFrame extends JFrame {
     exitButton = new JButton("EXIT");
     
     buttonPanel = new JPanel();
-    buttonPanel.setLayout(new BorderLayout());
-    buttonPanel.add(startButton, BorderLayout.LINE_START);
-    buttonPanel.add(exitButton, BorderLayout.LINE_END);
+    buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+    buttonPanel.add(startButton);
+    buttonPanel.add(exitButton);
     
     if (frameTitle.equals("Single Player")) {
       gamePanel = new SinglePlayerMode();
@@ -54,8 +55,11 @@ public class GameFrame extends JFrame {
       startButton.addMouseListener(new StartGame(gamePanel, startButton));
       exitButton.addMouseListener(new ExitGame(gamePanel, this));
       
-      add(gamePanel, BorderLayout.CENTER);
-      add(buttonPanel, BorderLayout.PAGE_END);
+      JPanel panel = new JPanel();
+      panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+      panel.add(gamePanel);
+      panel.add(buttonPanel);
+      add(panel, BorderLayout.CENTER);
       
       addWindowListener(new SwitchToMenu(gamePanel, this));
     }

@@ -23,6 +23,7 @@ public class VsPlayerMode extends DualPlayerMode {
     // TODO Auto-generated constructor stub
     super(delay);
     player2 = new HumanPlayer(puzzle);
+    switchingTimer = new Timer("Switcher", true);
     initializePlayer2();
   }
   
@@ -49,7 +50,6 @@ public class VsPlayerMode extends DualPlayerMode {
   public void startGame() {
     turn = 1;
     super.startGame();
-    switchingTimer = new Timer("Switcher", true);
     TimerTask switchTurn = new SwitchTurn();
     switchingTimer.scheduleAtFixedRate(switchTurn, 0, delayTime * 1000);
   }

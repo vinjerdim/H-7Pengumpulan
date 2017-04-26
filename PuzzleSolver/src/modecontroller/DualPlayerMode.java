@@ -24,6 +24,7 @@ public class DualPlayerMode extends FrameMode {
   public DualPlayerMode(int delay) {
     super();
     delayTime = delay;
+    monitorTimer = new Timer("Monitor", true);
     add(player1, BorderLayout.LINE_START);
   }
   
@@ -65,7 +66,6 @@ public class DualPlayerMode extends FrameMode {
    */
   @Override
   public void startGame() {
-    monitorTimer = new Timer("Monitor", true);
     TimerTask gameMonitor = new GameMonitor();
     monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100); 
     player1Thread.start();
