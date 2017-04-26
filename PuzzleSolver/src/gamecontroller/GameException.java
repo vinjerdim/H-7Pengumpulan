@@ -26,6 +26,8 @@ public class GameException extends Exception {
       JOptionPane.showMessageDialog(frame, "Input must be between 5 to 10");
     } else if (exceptionNumber == 2) {
       JOptionPane.showMessageDialog(frame, "Input must be between 0 to 2");
+    } else if (exceptionNumber == 3) {
+      JOptionPane.showMessageDialog(frame, "Input must be filled");
     }
   }
 }

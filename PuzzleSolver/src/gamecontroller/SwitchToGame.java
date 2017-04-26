@@ -54,7 +54,7 @@ public class SwitchToGame implements MouseListener {
       } catch (GameException e) {
         e.showDialog();
       } catch (NumberFormatException e) {
-        System.out.println("");
+        (new GameException(menuFrame, 3)).showDialog();;
       }
     }
   }
