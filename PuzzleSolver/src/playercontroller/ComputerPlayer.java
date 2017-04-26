@@ -1,6 +1,5 @@
 package playercontroller;
 
-import java.util.Timer;
 import java.util.TimerTask;
 
 import model.Puzzle;
@@ -59,7 +58,6 @@ public class ComputerPlayer extends PlayerController {
   @Override
   public void run() {
     TimerTask applyMovement = new ApplyMovement();
-    showTimer = new Timer("Timer" + playerId, true);
     int time = (delayTime == 0) ? 1000 / 2 : delayTime * 1000;
     showTimer.scheduleAtFixedRate(applyMovement, 0, time);
     super.run();

@@ -35,6 +35,7 @@ public class PlayerController extends JPanel implements Runnable {
     board = new Board(p);
     movementLabel = new JLabel();
     movementLabel.setFont(new Font("SANS SERIF", Font.BOLD, 16));
+    showTimer = new Timer("PlayerTimer" + playerId, true);
     setRunningState(true);
     
     setLayout(new BorderLayout());

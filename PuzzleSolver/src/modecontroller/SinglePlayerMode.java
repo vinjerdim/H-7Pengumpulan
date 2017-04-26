@@ -1,7 +1,6 @@
 package modecontroller;
 
 import java.awt.BorderLayout;
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -29,7 +28,6 @@ public class SinglePlayerMode extends FrameMode {
     player1.enablePlayer(true);
     player1Thread.start();
     TimerTask gameMonitor = new GameMonitor();
-    monitorTimer = new Timer(true);
     monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100);
   }
   

@@ -16,7 +16,6 @@ public class DualPlayerMode extends FrameMode {
   protected PlayerController player2;
   protected Thread player2Thread;
   protected int delayTime;
-  private Timer monitorTimer;
   
   /**
    * Konstruktor frame dual player.
@@ -24,7 +23,6 @@ public class DualPlayerMode extends FrameMode {
   public DualPlayerMode(int delay) {
     super();
     delayTime = delay;
-    monitorTimer = new Timer("Monitor", true);
     add(player1, BorderLayout.LINE_START);
   }
   
@@ -66,9 +64,8 @@ public class DualPlayerMode extends FrameMode {
    */
   @Override
   public void startGame() {
-    
     TimerTask gameMonitor = new GameMonitor();
-    monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 50); 
+    monitorTimer.scheduleAtFixedRate(gameMonitor, 0, 100); 
     player1Thread.start();
     player2Thread.start();
   }

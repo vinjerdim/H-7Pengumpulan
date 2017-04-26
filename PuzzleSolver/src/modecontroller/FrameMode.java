@@ -32,7 +32,6 @@ public abstract class FrameMode extends JPanel {
     //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLayout(new BorderLayout());
     setBorder(BorderFactory.createEmptyBorder(20, 50, 20, 50));
-    
     do {
       puzzle = new Puzzle((byte) 3);
     } while (puzzle.isFinished() || !puzzle.isSolvable());
@@ -40,6 +39,8 @@ public abstract class FrameMode extends JPanel {
     player1 = new HumanPlayer(puzzle);
     player1Thread = new Thread(player1, "Player" + + player1.getPlayerId());
     player1.enablePlayer(false);
+    
+    monitorTimer = new Timer("Monitor", true);
     
     statusLabel = new JLabel("Ready to run");
     add(statusLabel, BorderLayout. PAGE_START);

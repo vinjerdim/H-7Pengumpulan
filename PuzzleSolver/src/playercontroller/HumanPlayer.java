@@ -1,6 +1,5 @@
 package playercontroller;
 
-import java.util.Timer;
 import java.util.TimerTask;
 
 import model.Puzzle;
@@ -29,7 +28,6 @@ public class HumanPlayer extends PlayerController {
   @Override
   public void run() {
     TimerTask showMovement = new ShowMovement();
-    showTimer = new Timer("Timer" + playerId, true);
     showTimer.scheduleAtFixedRate(showMovement, 0, 10);
     super.run();
   }
