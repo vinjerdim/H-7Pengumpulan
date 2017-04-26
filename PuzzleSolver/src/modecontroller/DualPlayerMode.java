@@ -15,13 +15,15 @@ public class DualPlayerMode extends FrameMode {
   private static final long serialVersionUID = 1L;
   protected PlayerController player2;
   protected Thread player2Thread;
+  protected int delayTime;
   private Timer monitorTimer;
   
   /**
    * Konstruktor frame dual player.
    */
-  public DualPlayerMode() {
+  public DualPlayerMode(int delay) {
     super();
+    delayTime = delay;
     add(player1, BorderLayout.LINE_START);
   }
   

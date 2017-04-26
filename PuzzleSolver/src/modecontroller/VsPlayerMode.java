@@ -19,9 +19,9 @@ public class VsPlayerMode extends DualPlayerMode {
   /**
    * Konstruktor untuk frame player versus player.
    */
-  public VsPlayerMode() {
+  public VsPlayerMode(int delay) {
     // TODO Auto-generated constructor stub
-    super();
+    super(delay);
     player2 = new HumanPlayer(puzzle);
     initializePlayer2();
   }
@@ -51,7 +51,7 @@ public class VsPlayerMode extends DualPlayerMode {
     super.startGame();
     switchingTimer = new Timer("Switcher", true);
     TimerTask switchTurn = new SwitchTurn();
-    switchingTimer.scheduleAtFixedRate(switchTurn, 0, 5000);
+    switchingTimer.scheduleAtFixedRate(switchTurn, 0, delayTime * 1000);
   }
   
   /**

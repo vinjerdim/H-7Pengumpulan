@@ -3,6 +3,7 @@ package gamecontroller;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -31,14 +32,30 @@ public class SwitchToGame implements MouseListener {
   @Override
   public void mouseClicked(MouseEvent arg0) {
     // TODO Auto-generated method stub
+    int delay;
     if (optionItem[0].isSelected()) {
-      new GameFrame("Single Player");
-    } else if (optionItem[1].isSelected()) {
-      new GameFrame("Player vs Player");
-    } else if (optionItem[2].isSelected()) {
-      new GameFrame("Player vs Computer");
+      new GameFrame("Single Player",0);
+    } else if (optionItem[1].isSelected() || optionItem[2].isSelected()) {
+      try {
+        delay = Integer.parseInt(JOptionPane.showInputDialog(menuFrame, "Input:"));
+        if (optionItem[1].isSelected()) {
+          if (delay < 5 || delay > 10) {
+            throw new GameException(menuFrame, 1);
+          }
+          new GameFrame("Player vs Player", delay);
+        } else {
+          if (delay < 0 || delay > 2) {
+            throw new GameException(menuFrame, 2);
+          }
+          new GameFrame("Player vs Computer", delay);
+        }
+        menuFrame.dispose();
+      } catch (GameException e) {
+        e.showDialog();
+      } catch (NumberFormatException e) {
+        System.out.println("");
+      }
     }
-    menuFrame.dispose();
   }
 
   /* (non-Javadoc)

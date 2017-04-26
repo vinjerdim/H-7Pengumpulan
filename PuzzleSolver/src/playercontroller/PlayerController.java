@@ -1,6 +1,7 @@
 package playercontroller;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.util.Timer;
 
 import javax.swing.JLabel;
@@ -33,6 +34,7 @@ public class PlayerController extends JPanel implements Runnable {
     playerId = playerCount;
     board = new Board(p);
     movementLabel = new JLabel();
+    movementLabel.setFont(new Font("SANS SERIF", Font.BOLD, 16));
     setRunningState(true);
     
     setLayout(new BorderLayout());

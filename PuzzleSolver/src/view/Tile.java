@@ -2,6 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -29,6 +30,7 @@ public class Tile extends JButton {
     
     if (value != maxValue) {
       JLabel number = new JLabel(value + "", JLabel.CENTER);
+      number.setFont(new Font("Arial", Font.BOLD, defaultSize / 2));
       add(number);
     }
   }

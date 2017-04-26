@@ -26,15 +26,15 @@ public class GameFrame extends JFrame {
   
   /**
    * Konstruktor kelas GameFrame dengan parameter frameTitle.
-   * 
    * @param frameTitle Nama frame
    */
-  public GameFrame(String frameTitle) {
+  public GameFrame(String frameTitle, int delay) {
     super(frameTitle);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLayout(new BorderLayout());
-    gamePanel = null;
+    setLocation(150, 150);
     
+    gamePanel = null;
     buttonPanel = new JPanel();
     buttonPanel.setLayout(new BorderLayout());
     startButton = new JButton("START");
@@ -45,9 +45,9 @@ public class GameFrame extends JFrame {
     if (frameTitle.equals("Single Player")) {
       gamePanel = new SinglePlayerMode();
     } else if (frameTitle.equals("Player vs Player")) {
-      gamePanel = new VsPlayerMode();
+      gamePanel = new VsPlayerMode(delay);
     } else if (frameTitle.equals("Player vs Computer")) {
-      gamePanel = new VsComputerMode();
+      gamePanel = new VsComputerMode(delay);
     }
     if (gamePanel != null) {
       startButton.addMouseListener(new StartGame(gamePanel, startButton));

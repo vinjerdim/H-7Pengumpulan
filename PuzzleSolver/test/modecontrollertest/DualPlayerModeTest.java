@@ -21,7 +21,7 @@ public class DualPlayerModeTest {
 
   @Test
   public void test() {
-    DualPlayerMode dp = new DualPlayerMode();
+    DualPlayerMode dp = new DualPlayerMode(1);
     assertTrue(!dp.getPuzzle().isFinished() && dp.getPuzzle().isSolvable());
     assertNotNull(dp.getPlayer1());
     assertNotNull(dp.getPlayer1Thread());

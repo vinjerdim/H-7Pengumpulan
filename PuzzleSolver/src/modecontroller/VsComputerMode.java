@@ -14,10 +14,10 @@ public class VsComputerMode extends DualPlayerMode {
   /**
    * Konstruktor frame player versus computer.
    */
-  public VsComputerMode() {
+  public VsComputerMode(int delay) {
     // TODO Auto-generated constructor stub
-    super();
-    player2 = new ComputerPlayer(puzzle);
+    super(delay);
+    player2 = new ComputerPlayer(puzzle, delay);
     initializePlayer2();
   }
   

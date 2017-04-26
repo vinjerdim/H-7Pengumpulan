@@ -20,7 +20,7 @@ public class VsPlayerModeTest {
 
   @Test
   public void test() {
-    VsPlayerMode vpm = new VsPlayerMode();
+    VsPlayerMode vpm = new VsPlayerMode(1);
     assertTrue(!vpm.getPuzzle().isFinished() && vpm.getPuzzle().isSolvable());
     assertNotNull(vpm.getPlayer1());
     assertNotNull(vpm.getPlayer1Thread());

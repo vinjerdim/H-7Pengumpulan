@@ -20,7 +20,7 @@ public class VsComputerModeTest {
 
   @Test
   public void test() {
-    VsComputerMode vcm = new VsComputerMode();
+    VsComputerMode vcm = new VsComputerMode(1);
     assertTrue(!vcm.getPuzzle().isFinished() && vcm.getPuzzle().isSolvable());
     assertNotNull(vcm.getPlayer1());
     assertNotNull(vcm.getPlayer1Thread());

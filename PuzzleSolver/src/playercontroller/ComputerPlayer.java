@@ -15,13 +15,15 @@ public class ComputerPlayer extends PlayerController {
   private static final long serialVersionUID = 1L;
   private byte[] solution;
   private byte movementIndex = 0;
-   
+  private int delayTime;
+  
   /**
    * Konstruktor kelas ComputerPlayer dengan parameter Puzzle.
    * @param p Puzzle computer
    */
-  public ComputerPlayer(Puzzle p) {
+  public ComputerPlayer(Puzzle p, int delay) {
     super(p);
+    delayTime = delay;
     PuzzleSolver ps = new PuzzleSolver(p);
     solution = ps.getSolution().getMovementSet();
     movementLabel.setText(solution.length + " movement(s) left");
@@ -44,13 +46,22 @@ public class ComputerPlayer extends PlayerController {
   }
   
   /**
+   * Method yang mengembalikan waktu delay pergerakan player.
+   * @return waktu delays
+   */
+  public int getDelayTime() {
+    return delayTime;
+  }
+  
+  /**
    * Method untuk menjalankan ComputerPlayer.
    */
   @Override
   public void run() {
     TimerTask applyMovement = new ApplyMovement();
     showTimer = new Timer("Timer" + playerId, true);
-    showTimer.scheduleAtFixedRate(applyMovement, 0, 1000);
+    int time = (delayTime == 0) ? 1000 / 2 : delayTime * 1000;
+    showTimer.scheduleAtFixedRate(applyMovement, 0, time);
     super.run();
   }
   

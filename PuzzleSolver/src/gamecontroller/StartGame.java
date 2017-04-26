@@ -1,29 +1,25 @@
 package gamecontroller;
 
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
 import modecontroller.FrameMode;
 
 /**
- * Kelas StartGame adalah view untuk memulai permainan
- * 
+ * Kelas StartGame adalah view untuk memulai permainan.
  * @author Patrick Nugroho Hadiwinoto (13515040).
- *
  */
-public class StartGame implements MouseListener {
-  private FrameMode gamePanel;
+public class StartGame extends ButtonAction {
   private JButton startButton;
   
   /**
    * Konstruktor kelas StartGame dengan dua parameter.
-   * @param g FrameMode
+   * @param f Frame Game
    * @param b JButton
    */
-  public StartGame(FrameMode g, JButton b) {
-    gamePanel = g;
+  public StartGame(FrameMode f, JButton b) {
+    super(f);
     startButton = b;
   }
   
@@ -37,41 +33,4 @@ public class StartGame implements MouseListener {
     startButton.setEnabled(false);
     startButton.removeMouseListener(this);
   }
-
-  /* (non-Javadoc)
-   * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
-   */
-  @Override
-  public void mouseEntered(MouseEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
-  /* (non-Javadoc)
-   * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
-   */
-  @Override
-  public void mouseExited(MouseEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
-  /* (non-Javadoc)
-   * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
-   */
-  @Override
-  public void mousePressed(MouseEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
-  /* (non-Javadoc)
-   * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
-   */
-  @Override
-  public void mouseReleased(MouseEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
 }
