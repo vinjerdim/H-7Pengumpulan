@@ -80,6 +80,7 @@ public class DualPlayerMode extends FrameMode {
     // TODO Auto-generated method stub
     player1.setRunningState(false);
     player2.setRunningState(false);
+    monitorTimer.cancel();
   }
   
   /**
@@ -102,7 +103,6 @@ public class DualPlayerMode extends FrameMode {
           player1.enablePlayer(false);
           player1.setRunningState(false);
         }
-        monitorTimer.cancel();
       }
     }
   }

@@ -54,6 +54,12 @@ public class VsPlayerMode extends DualPlayerMode {
     switchingTimer.scheduleAtFixedRate(switchTurn, 0, delayTime * 1000);
   }
   
+  @Override
+  public void endGame() {
+    super.endGame();
+    switchingTimer.cancel();
+  }
+  
   /**
    * Kelas SwitchTurn adalah kelas yang mempunyai parent TimerTask.
    */
@@ -74,8 +80,6 @@ public class VsPlayerMode extends DualPlayerMode {
         player2.enablePlayer(turn == 2);
         turn %= 2;
         turn++;
-      } else {
-        switchingTimer.cancel();
       }
     }
   }

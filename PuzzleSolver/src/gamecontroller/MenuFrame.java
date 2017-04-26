@@ -34,7 +34,7 @@ public class MenuFrame extends JFrame {
     setLayout(new BorderLayout());
     setLocation(100, 100);
     
-    JLabel title = new JLabel("The Puzzle Frenzy");
+    JLabel title = new JLabel("Slide The Numbers");
     title.setHorizontalAlignment(JLabel.CENTER);
     title.setFont(new Font("SANS SERIF", Font.TRUETYPE_FONT, 24));
     
@@ -58,7 +58,7 @@ public class MenuFrame extends JFrame {
     
     JPanel mainPanel = new JPanel();
     mainPanel.setLayout(new BorderLayout());
-    mainPanel.setBorder(BorderFactory.createEmptyBorder(40, 10, 40, 10));
+    mainPanel.setBorder(BorderFactory.createEmptyBorder(50, 20, 50, 20));
     mainPanel.add(title, BorderLayout.PAGE_START);
     mainPanel.add(optionsPanel, BorderLayout.CENTER);
     mainPanel.add(playButton, BorderLayout.PAGE_END);

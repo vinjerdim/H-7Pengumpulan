@@ -35,9 +35,10 @@ public class SwitchToGame implements MouseListener {
     int delay;
     if (optionItem[0].isSelected()) {
       new GameFrame("Single Player",0);
+      menuFrame.dispose();
     } else if (optionItem[1].isSelected() || optionItem[2].isSelected()) {
       try {
-        delay = Integer.parseInt(JOptionPane.showInputDialog(menuFrame, "Input:"));
+        delay = Integer.parseInt(JOptionPane.showInputDialog(menuFrame, "Input delay time:"));
         if (optionItem[1].isSelected()) {
           if (delay < 5 || delay > 10) {
             throw new GameException(menuFrame, 1);
