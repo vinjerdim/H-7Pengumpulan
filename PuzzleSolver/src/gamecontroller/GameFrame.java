@@ -29,6 +29,7 @@ public class GameFrame extends JFrame {
   /**
    * Konstruktor kelas GameFrame dengan parameter frameTitle.
    * @param frameTitle Nama frame
+   * @param delay Delay untuk multiplayer
    */
   public GameFrame(String frameTitle, int delay) {
     super(frameTitle);

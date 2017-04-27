@@ -19,6 +19,7 @@ public class ComputerPlayer extends PlayerController {
   /**
    * Konstruktor kelas ComputerPlayer dengan parameter Puzzle.
    * @param p Puzzle computer
+   * @param delay Delay untuk multiplayer
    */
   public ComputerPlayer(Puzzle p, int delay) {
     super(p);

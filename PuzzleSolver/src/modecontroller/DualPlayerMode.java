@@ -19,6 +19,7 @@ public class DualPlayerMode extends FrameMode {
   
   /**
    * Konstruktor frame dual player.
+   * @param delay Delay untuk multiplayer
    */
   public DualPlayerMode(int delay) {
     super();

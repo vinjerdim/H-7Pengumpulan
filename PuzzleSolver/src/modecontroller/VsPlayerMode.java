@@ -18,6 +18,7 @@ public class VsPlayerMode extends DualPlayerMode {
   
   /**
    * Konstruktor untuk frame player versus player.
+   * @param delay Delay untuk multiplayer
    */
   public VsPlayerMode(int delay) {
     // TODO Auto-generated constructor stub

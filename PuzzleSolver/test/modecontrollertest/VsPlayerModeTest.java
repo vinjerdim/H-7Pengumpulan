@@ -25,7 +25,6 @@ public class VsPlayerModeTest {
     assertNotNull(vpm.getPlayer1());
     assertNotNull(vpm.getPlayer1Thread());
     assertNotNull(vpm.getPlayer2());
-    assertTrue(vpm.getTurn() == 1);
     vpm.initializePlayer2();
     assertTrue(vpm.getPlayer2Thread().getName().contains("Player"));
     vpm.startGame();

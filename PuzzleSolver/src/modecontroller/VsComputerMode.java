@@ -13,6 +13,7 @@ public class VsComputerMode extends DualPlayerMode {
 
   /**
    * Konstruktor frame player versus computer.
+   * @param delay Delay untuk multiplayer
    */
   public VsComputerMode(int delay) {
     // TODO Auto-generated constructor stub
